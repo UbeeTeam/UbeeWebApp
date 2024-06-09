@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import MasterInfo from '@/components/MasterInfo.vue'
-import MasterPortfolio from '@/components/MasterPortfolio.vue'
-import MasterServices from '@/components/MasterServices.vue'
+import MasterInfo from '@/components/MasterInfo.vue';
+import MasterPortfolio from '@/components/MasterPortfolio.vue';
+import MasterServices from '@/components/MasterServices.vue';
+import ReviewsSection from '@/components/ReviewsSection.vue';
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import MasterServices from '@/components/MasterServices.vue'
     <MasterInfo />
     <MasterPortfolio />
     <MasterServices />
+    <ReviewsSection />
   </main>
 </template>
