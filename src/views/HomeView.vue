@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import MasterInfo from '@/components/MasterInfo.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
+  <main class="container p-0 main">
+    <MasterInfo />
   </main>
 </template>
