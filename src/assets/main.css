@@ -52,7 +52,7 @@ html {
 }
 
 body {
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 0 0 var(--ubee-gutter) 0;
 }
 
@@ -276,32 +276,32 @@ body {
 }
 
 .swiper-pagination {
-  align-items: center;
-  display: flex;
-  height: auto;
-  justify-content: center;
-  margin-top: calc(var(--ubee-base) / 2);
-  position: relative;
-  top: 0;
+  align-items: center !important;
+  display: flex !important;
+  height: auto !important;
+  justify-content: center !important;
+  margin-top: calc(var(--ubee-base) / 2) !important;
+  position: relative !important;
+  top: 0 !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--ubee-text-dark);
-  border-radius: 1px;
-  height: calc(var(--ubee-base) / 8);
-  opacity: 1;
-  width: var(--ubee-base);
+  background-color: var(--ubee-text-dark) !important;
+  border-radius: 1px !important;
+  height: calc(var(--ubee-base) / 8) !important;
+  opacity: 1 !important;
+  width: var(--ubee-base) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--ubee-primary-200);
+  background-color: var(--ubee-primary-200) !important;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-horizontal > .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-fraction {
-  top: 0;
+  top: 0 !important;
 }
 
 @media (max-width: 576px) {
