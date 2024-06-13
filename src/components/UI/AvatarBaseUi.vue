@@ -3,7 +3,7 @@
 <template>
   <div class="master-info d-flex flex-column flex-sm-row align-items-center">
     <figure
-      class="d-block flex-shrink-0 rounded-circle master-avatar"
+      class="flex-shrink-0 rounded-circle master-avatar"
       style="border: 2px solid var(--ubee-status-ready)"
     >
       <!--ВЫНЕСТИ ИНЛАЙН СТИЛИ-->

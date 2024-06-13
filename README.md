@@ -1,3 +1,4 @@
+docker-compose run dev server (Port :3050): "docker-compose -f docker-compose.dev.yml up --build"
 # ds
 
 This template should help get you started developing with Vue 3 in Vite.

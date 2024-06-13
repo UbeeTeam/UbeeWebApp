@@ -1,7 +1,1 @@
-FROM node:20.9.0-alpine
-WORKDIR /app
-COPY ../package.json ./
-RUN npm i
-RUN npm install -g vite
-COPY . .
-CMD ["npm", "run", "build"]
+# NO yet

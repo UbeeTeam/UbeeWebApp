@@ -122,6 +122,19 @@ body {
   width: 100px;
 }
 
+.master-map {
+  position: relative
+}
+
+.master-map > #map {
+  bottom: 0;
+  position: absolute;
+  left: 12px;
+  overflow: hidden;
+  right: 12px;
+  top: 0
+}
+
 .master-avatar__image {
   height: 92px;
   width: 92px;
@@ -286,15 +299,18 @@ body {
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--ubee-text-dark) !important;
-  border-radius: 1px !important;
-  height: calc(var(--ubee-base) / 8) !important;
-  opacity: 1 !important;
-  width: var(--ubee-base) !important;
+  background-color: var(--ubee-primary-200) !important;
+  border-radius: 4px !important;
+  height: calc(var(--ubee-base) / 2) !important;
+  opacity: .2 !important;
+  transition: all .2s linear !important;
+    width: calc(var(--ubee-base) / 2) !important;
 }
 
 .swiper-pagination-bullet-active {
   background-color: var(--ubee-primary-200) !important;
+  border-color: var(--ubee-primary-200) !important;
+  opacity: 1 !important;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
