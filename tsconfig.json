@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
+    "moduleResolution":"node",
     "isolatedModules": true,
     "lib": ["dom", "ES2015", "es2015"],
     "types": ["vue-router", "vite/client", "vue", "node"],

@@ -47,6 +47,10 @@
     'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+#app {
+  width: 100vw;
+}
+
 html {
   background-color: var(--bs-gray-100);
 }
@@ -88,14 +92,14 @@ body {
 }
 
 .logo {
-  height: 44px;
+  height: 24px;
   margin: 0;
-  width: 40px;
+  width: 22px;
 }
 
 .logo__image {
-  height: 44px;
-  width: 40px;
+  height: 24px;
+  width: 20px;
 }
 
 .btn-primary {
@@ -114,16 +118,35 @@ body {
   padding: var(--ubee-base);
 }
 
+.master-info {
+  position: relative
+}
+
 .master-avatar {
-  height: 100px;
+  height: 80px;
   margin: 0;
   overflow: hidden;
   padding: 2px;
-  width: 100px;
+  width: 80px
+}
+
+.master-avatar__image {
+  height: 72px;
+  width: 72px
+}
+
+.master-avatar__small {
+  height: 60px;
+  width: 60px;
+}
+
+.master-avatar__small .master-avatar__image {
+  height: 52px;
+  width: 52px
 }
 
 .master-map {
-  position: relative
+  position: relative;
 }
 
 .master-map > #map {
@@ -132,7 +155,7 @@ body {
   left: 12px;
   overflow: hidden;
   right: 12px;
-  top: 0
+  top: 0;
 }
 
 .master-avatar__image {
@@ -211,6 +234,11 @@ body {
   line-height: 20px;
 }
 
+.block-subheader {
+  font-size: 16px;
+  line-height: 20px
+}
+
 .service {
   border-color: var(--bs-gray-200);
 }
@@ -253,6 +281,118 @@ body {
 
 .service-item:not(:first-child) {
   margin-top: calc(var(--ubee-base) / 2);
+}
+
+.appointment {
+  background-color: var(--bs-white);
+  margin-bottom: var(--ubee-base);
+  padding: var(--ubee-base);
+}
+
+.appointment-services {
+  position: relative;
+}
+
+.appointment-services__header {
+  color: var(--bs-gray-500);
+  font: 400 12px/16px var(--ubee-font-text);
+}
+
+.appointment-services .service-item {
+  padding-left: 32px;
+}
+
+.appointment-service__select {
+  cursor: pointer;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.appointment-service__select > input {
+  position: absolute;
+  text-indent: -9999px;
+  visibility: hidden;
+}
+
+.appointment-service__select > input:checked + span {
+  background-color: var(--ubee-success);
+  color: var(--bs-white);
+}
+
+.appointment-service__select > input:checked + span:before {
+  opacity: 1;
+}
+
+.appointment-service__select > span {
+  background-color: var(--ubee-secondary-050);
+  border-radius: 50%;
+  display: block;
+  height: 24px;
+  left: 0;
+  padding: 4px;
+  position: relative;
+  top: 0;
+  transition: all 0.2s linear;
+  width: 24px;
+}
+
+.appointment-service__select > span:before {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 16px;
+  opacity: 0;
+  transition: all 0.2s linear;
+  width: 16px;
+}
+
+.appointment-modal {
+  border: 0;
+}
+
+.appointment-modal .modal-body {
+  font: 400 12px/1.5 var(--ubee-font-text);
+}
+
+.appointment-modal__master-info {
+  background-color: var(--ubee-secondary-050);
+  text-align: center;
+}
+
+.appointment-modal__master-info p {
+  margin: 0;
+}
+
+.appointment-modal__master-info p:not(:first-child) {
+  margin-top: calc(var(--ubee-base) / 4);
+}
+
+.appointment-modal__app figure {
+  height: 98px;
+  margin: 0 auto;
+  width: 80px;
+}
+
+.appointment-modal__app figure img {
+  height: 98px;
+  width: 80px;
+}
+
+.appointment-modal__app .footer-apps > a {
+  display: block;
+  height: 30px;
+  margin: 0 var(--ubee-base) 0 0;
+  width: 30px;
+}
+
+.appointment-modal__app .footer-apps img {
+  display: block;
+  height: 30px;
+  width: 30px;
 }
 
 .reviews {
@@ -302,9 +442,9 @@ body {
   background-color: var(--ubee-primary-200) !important;
   border-radius: 4px !important;
   height: calc(var(--ubee-base) / 2) !important;
-  opacity: .2 !important;
-  transition: all .2s linear !important;
-    width: calc(var(--ubee-base) / 2) !important;
+  opacity: 0.2 !important;
+  transition: all 0.2s linear !important;
+  width: calc(var(--ubee-base) / 2) !important;
 }
 
 .swiper-pagination-bullet-active {
