@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { Props } from '@/interface/UI/MasterFeedbackBadge';
+import type { Props } from '@/interfaces/UI/MasterFeedbackBadge';
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   isReviewsSectionBadge: false,
   isMasterFormPage: false,
 });
@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
         : 'justify-content-center align-items-center pt-2'
     ]"
   >
-    <span class="ps-3">4.5</span>
-    <span v-if="!isMasterFormPage" class="ms-2 ps-3">17 отзывов</span>
+    <span class="ps-3">{{ raiting }}</span>
+    <span v-if="!isMasterFormPage" class="ms-2 ps-3">{{ feedbackCount }} отзывов</span>
   </div>
 </template>

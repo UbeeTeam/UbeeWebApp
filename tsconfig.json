@@ -25,7 +25,9 @@
     "types": ["vue-router", "vite/client", "vue", "node"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@stores/*": ["./src/stores/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]

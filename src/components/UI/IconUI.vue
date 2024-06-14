@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/interface/UI/IconUIInterface'
+import type { Props } from '@/interfaces/UI/IconUIInterface'
 import { defineProps } from 'vue'
 
 const props = defineProps<Props>()

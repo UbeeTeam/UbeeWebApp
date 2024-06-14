@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { Props } from '@/interface/UI/AvatarUIInterface';
+import type { Props } from '@/interfaces/UI/AvatarUIInterface';
 
 
 const props = withDefaults(defineProps<Props>(), {
   isSmallAvatar: false,
+  src:'',
 });
 
 </script>
@@ -16,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
       style="border: 2px solid var(--ubee-status-ready)"
     >
       <img
-        src="@/assets/images/logo.png"
+        :src="src"
         class="d-block master-avatar__image"
         alt="master avatar"
       />

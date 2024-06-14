@@ -13,7 +13,8 @@ const pagination = {
 </script>
 
 <template>
-  <section class="portfolio">
+  <section class="portfolio rounded-4">
+  <h2 class="m-0 mb-3 block-header">Пример работ</h2>
     <swiper
       :modules="[Pagination]"
       :breakpoints="breakpoints"

@@ -210,7 +210,9 @@ body {
 }
 
 .portfolio {
+  background-color: var(--bs-white);
   margin-bottom: var(--ubee-base);
+  padding: var(--ubee-base) var(--ubee-base) calc(var(--ubee-base) / 2) var(--ubee-base)
 }
 
 .portfolio-image {
@@ -458,6 +460,12 @@ body {
 .swiper-horizontal > .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-fraction {
   top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .master-map {
+      height:140px
+  }
 }
 
 @media (max-width: 576px) {

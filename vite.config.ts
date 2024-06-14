@@ -13,8 +13,10 @@ export default defineConfig({
     VueDevTools(),
   ],
   resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+    alias: [
+      { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+      { find: '@stores', replacement: fileURLToPath(new URL('./src/stores', import.meta.url)) },
+      { find: '@interfaces', replacement: fileURLToPath(new URL('./src/interfaces', import.meta.url)) }
+    ]
   }
 })

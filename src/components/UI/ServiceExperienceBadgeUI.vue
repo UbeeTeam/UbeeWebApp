@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Props } from '@/interfaces/UI/ServiceExperienceBadgeUIInterface'
+
+defineProps<Props>();
+</script>
 
 <template>
   <div class="d-flex flex-nowrap rounded-pill master-skill">
-    <span>Ногтевой сервис</span>
-    <span class="rounded-pill">менее года</span>
+    <span>{{ activity.ActivityTemplateName }}</span>
+    <span class="rounded-pill">{{activity.Experience}}</span>
   </div>
 </template>
