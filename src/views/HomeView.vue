@@ -11,8 +11,11 @@ const masterStore = useMasterInfoStore();
 <template>
   <main class="container p-0 main">
     <MasterInfo :master-data="masterStore.masterData.master" />
-    <MasterPortfolio />
-    <MasterServices />
+    <MasterPortfolio :portfolios="masterStore.masterData.Portfolios"/>
+    <MasterServices 
+      :master-services="masterStore.masterData.master.MasterServices"
+      :master-activities="masterStore.masterData.master.MasterActivities"
+    />
     <ReviewsSection />
   </main>
 </template>

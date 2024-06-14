@@ -58,42 +58,42 @@ export const mockData = {
   Portfolios: [
     {
       Id: 0,
-      SignedUrl: "https://yandex.ru/images/search?pos=0&from=tabbar&img_url=https%3A%2F%2Fs1.1zoom.ru%2Fbig3%2F76%2F356720-admin.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://i.artfile.ru/2560x1600_835577_[www.ArtFile.ru].jpg",
       Description: "string"
     },
     {
       Id: 1,
-      SignedUrl: "https://yandex.ru/images/search?pos=1&from=tabbar&img_url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F8c%2F09%2Fae%2F8c09ae6305cc3a920c996dff7a8c3c98.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://wp-s.ru/wallpapers/9/10/497395245124617/osennij-pejzazh-doroga-v-gorax.jpg",
       Description: "string"
     },
     {
       Id: 2,
-      SignedUrl: "https://yandex.ru/images/search?pos=2&from=tabbar&img_url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F11%2Fd8%2Fc6%2F11d8c6e216d07ffa4fa17b8a0e9ec187.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://get.wallhere.com/photo/trees-landscape-mountains-sunset-lake-nature-reflection-sunrise-evening-morning-wilderness-dusk-cloud-autumn-mountain-dawn-meadow-1920x1080-px-loch-computer-wallpaper-mountain-range-623342.jpg",
       Description: "string"
     },
     {
       Id: 3,
-      SignedUrl: "https://yandex.ru/images/search?pos=3&from=tabbar&img_url=https%3A%2F%2Fimg.goodfon.com%2Foriginal%2F4500x2971%2Fc%2F1b%2Fozero-gory-les-zakat-derevya.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://s1.1zoom.ru/big7/367/Lake_Mountains_Sunrises_433183.jpg",
       Description: "string"
     },
     {
       Id: 4,
-      SignedUrl: "https://yandex.ru/images/search?pos=5&from=tabbar&img_url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F76%2F34%2F54%2F763454db829c433f3ef728766bc7b7ef.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://img.razrisyika.ru/kart/64/252790-gornyy-peyzazh-36.jpg",
       Description: "string"
     },
     {
       Id: 5,
-      SignedUrl: "https://yandex.ru/images/search?pos=9&from=tabbar&img_url=https%3A%2F%2Fwww.funnyart.club%2Fuploads%2Fposts%2F2023-04%2F1682874315_funnyart-club-p-krasivie-peizazhi-prirodi-krasivo-1.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://www.funnyart.club/uploads/posts/2023-04/1682874368_funnyart-club-p-krasivie-peizazhi-prirodi-krasivo-13.jpg",
       Description: "string"
     },
     {
       Id: 6,
-      SignedUrl: "https://yandex.ru/images/search?pos=18&from=tabbar&img_url=https%3A%2F%2Fs2.best-wallpaper.net%2Fwallpaper%2F2560x1920%2F1501%2FGrand-Teton-National-Park-Wyoming-USA-trees-mountains-lake_2560x1920.jpg&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://img1.akspic.ru/attachments/crops/5/3/6/2/0/102635/102635-pejzazhi_gor-dikaya_mestnost-gora-gornyj_relef-nebo-2560x1440.jpg",
       Description: "string"
     },
     {
       Id: 7,
-      SignedUrl: "https://yandex.ru/images/search?pos=19&from=tabbar&img_url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-ydo%2F4362967%2F2a0000017e1c6b0a7d5a72b5b0a778cdeac3%2Fdiploma&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6%D0%B8&rpt=simage&lr=43",
+      SignedUrl: "https://img.razrisyika.ru/kart/64/252759-gornyy-peyzazh-5.jpg",
       Description: "string"
     },
   ],

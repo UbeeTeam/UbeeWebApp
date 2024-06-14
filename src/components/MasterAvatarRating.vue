@@ -17,7 +17,7 @@ const props = withDefaults( defineProps<Props>(), {
         :src="masterData.AvatarSignedUrl"
     />
     <div
-      class="d-flex flex-wrap justify-content-center justify-content-sm-start pt-2 pt-sm-0 ps-sm-2 master-skills"
+      class="d-flex flex-wrap ms-2 p-0 master-skills"
     >
       <ServiceExperienceBadge 
         v-for="activity in masterData.MasterActivities" 

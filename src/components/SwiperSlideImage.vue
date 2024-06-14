@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Props } from '@/interfaces/SwiperSlideImageInterface';
+
+defineProps<Props>();
+</script>
 
 <template>
   <figure
@@ -8,6 +12,6 @@
     style="width: 113.333px; margin-right: 8px"
   >
     <!--инлайн-->
-    <img src="/src/assets/images/logo.png" alt="swiper slide image" />
+    <img :src="portfolio.SignedUrl" alt="swiper slide image" />
   </figure>
 </template>

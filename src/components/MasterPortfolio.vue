@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import SwiperSlideImage from './SwiperSlideImage.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { breakpoints } from '@/utils/swiperBreakpoints'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import { breakpoints, pagination } from '@/utils/swiperConstants'
 import { Pagination } from 'swiper/modules'
+import type { Props } from '@/interfaces/MasterPortfolioInterface'
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-const pagination = {
-  clickable: true,
-  el: '.pagination'
-}
+defineProps<Props>();
 </script>
 
 <template>
@@ -23,15 +21,15 @@ const pagination = {
       :pagination="pagination"
       style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms"
     >
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
-      <swiper-slide><SwiperSlideImage /></swiper-slide>
+      <swiper-slide 
+        v-for="portfolio in portfolios" 
+        :key="portfolio.Id"
+      >
+        <SwiperSlideImage 
+          :key="portfolio.Id"
+          :portfolio="portfolio"
+        />
+      </swiper-slide>
     </swiper>
     <div class="pagination swiper-pagination"></div>
   </section>
