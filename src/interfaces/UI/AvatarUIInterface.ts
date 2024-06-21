@@ -1,4 +1,4 @@
 export interface Props {
-    isSmallAvatar?: boolean,
-    src: string,
+  isSmallAvatar?: boolean
+  src: string
 }

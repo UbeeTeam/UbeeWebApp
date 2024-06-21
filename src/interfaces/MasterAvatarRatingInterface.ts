@@ -1,4 +1,4 @@
 export interface Props {
-    isMasterFormPage?: boolean,
-    masterData: any, // Добавить тип 
+  isMasterFormPage?: boolean
+  masterData: any // Добавить тип
 }

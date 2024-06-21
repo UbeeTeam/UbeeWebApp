@@ -1,3 +1,3 @@
 export interface Props {
-    activity: any, // Добавить тип
+  activity: any // Добавить тип
 }

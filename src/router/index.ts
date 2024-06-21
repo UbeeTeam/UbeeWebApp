@@ -1,14 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import MasterFormView from '@/views/MasterFormView.vue'
+import MasterProfileView from '@/views/MasterProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'masterProfile',
+      component: MasterProfileView
     },
     {
       path: '/master-form',

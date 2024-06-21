@@ -71,16 +71,9 @@ body {
   line-height: 16px;
 }
 
-.footer-apps > a {
-  display: block;
-  height: 30px;
-  width: 30px;
-}
-
 .footer-apps img {
   display: block;
-  height: 30px;
-  width: 30px;
+  height: 40px;
 }
 
 .footer-apps__apple {
@@ -119,7 +112,7 @@ body {
 }
 
 .master-info {
-  position: relative
+  position: relative;
 }
 
 .master-avatar {
@@ -127,12 +120,12 @@ body {
   margin: 0;
   overflow: hidden;
   padding: 2px;
-  width: 80px
+  width: 80px;
 }
 
 .master-avatar__image {
   height: 72px;
-  width: 72px
+  width: 72px;
 }
 
 .master-avatar__small {
@@ -142,7 +135,7 @@ body {
 
 .master-avatar__small .master-avatar__image {
   height: 52px;
-  width: 52px
+  width: 52px;
 }
 
 .master-map {
@@ -212,7 +205,7 @@ body {
 .portfolio {
   background-color: var(--bs-white);
   margin-bottom: var(--ubee-base);
-  padding: var(--ubee-base) var(--ubee-base) calc(var(--ubee-base) / 2) var(--ubee-base)
+  padding: var(--ubee-base) var(--ubee-base) calc(var(--ubee-base) / 2) var(--ubee-base);
 }
 
 .portfolio-image {
@@ -238,7 +231,7 @@ body {
 
 .block-subheader {
   font-size: 16px;
-  line-height: 20px
+  line-height: 20px;
 }
 
 .service {
@@ -464,7 +457,7 @@ body {
 
 @media (max-width: 768px) {
   .master-map {
-      height:140px
+    height: 140px;
   }
 }
 

@@ -19,7 +19,7 @@ export const breakpoints = {
     slidesPerView: 8,
     spaceBetween: 8
   }
-};
+}
 
 export const pagination = {
   clickable: true,

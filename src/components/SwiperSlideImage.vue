@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Props } from '@/interfaces/SwiperSlideImageInterface';
+import type { Props } from '@interfaces/SwiperSlideImageInterface'
 
-defineProps<Props>();
+defineProps<Props>()
 </script>
 
 <template>

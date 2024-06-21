@@ -1,6 +1,6 @@
 export interface Props {
-    isReviewsSectionBadge?: boolean,
-    isMasterFormPage?: boolean,
-    feedbackCount: number,
-    raiting: number,
+  isReviewsSectionBadge?: boolean
+  isMasterFormPage?: boolean
+  feedbackCount: number
+  raiting: number
 }

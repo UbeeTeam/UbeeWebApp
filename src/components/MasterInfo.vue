@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import MasterAvatarRating from './MasterAvatarRating.vue';
-import AppointmentBookingButton from "./UI/AppointmentBookingButton.vue";
-import MasterLocationMap from './MasterLocationMap.vue';
-import type { Props } from '@/interfaces/MasterInfoInterface';
+import MasterAvatarRating from './MasterAvatarRating.vue'
+import AppointmentBookingButton from './UI/AppointmentBookingButton.vue'
+import MasterLocationMap from './MasterLocationMap.vue'
+import type { Props } from '@interfaces/MasterInfoInterface'
 
-const props = defineProps<Props>();
+defineProps<Props>()
 </script>
 
 <template>
@@ -12,9 +12,7 @@ const props = defineProps<Props>();
     <h2 class="m-0 mb-3 block-header">{{ masterData.Name }}</h2>
     <div class="row">
       <div class="col-12 col-md-7">
-        <MasterAvatarRating
-          :master-data="masterData"
-        />
+        <MasterAvatarRating :master-data="masterData" />
         <RouterLink to="/master-form">
           <AppointmentBookingButton />
         </RouterLink>
@@ -26,7 +24,6 @@ const props = defineProps<Props>();
           :coordinates="[masterData.GeoLatitude, masterData.GeoLongitude]"
         />
       </div>
-      
     </div>
     <div class="row mt-3 master-description">
       <div class="col">

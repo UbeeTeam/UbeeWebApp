@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { Props } from '@/interfaces/UI/IconUIInterface'
+import type { Props } from '@interfaces/UI/IconUIInterface'
 import { defineProps } from 'vue'
 
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>
   <div class="icon-wrapper">
     <svg
-      :class="class"
+      :class="className"
       xmlns="http://www.w3.org/2000/svg"
       class="w-0.875 h-0.875"
       viewBox="0 0 24 24"

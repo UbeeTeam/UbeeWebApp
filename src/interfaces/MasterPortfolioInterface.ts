@@ -1,3 +1,3 @@
 export interface Props {
-    portfolios: any, // Добавить тип
+  portfolios: any // Добавить тип
 }

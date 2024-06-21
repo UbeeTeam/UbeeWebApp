@@ -1,3 +1,3 @@
 export interface Props {
-    masterData: any
+  masterData: any
 }
