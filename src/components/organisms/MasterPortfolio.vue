@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SwiperSlideImage from './SwiperSlideImage.vue'
+import SwiperSlideImage from '@atoms/SwiperSlideImage.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { breakpoints, pagination } from '@/utils/swiperConstants'
 import { Pagination } from 'swiper/modules'

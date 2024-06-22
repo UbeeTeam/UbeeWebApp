@@ -1,4 +1,4 @@
-import HelloWorld from '@/components/TheHeader.vue'
+import HelloWorld from '@/components/organisms/TheHeader.vue'
 
 describe('HelloWorld', () => {
   it('playground', () => {

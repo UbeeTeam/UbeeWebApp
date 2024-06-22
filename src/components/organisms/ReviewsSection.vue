@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MasterFeedbackBadgeUI from '@/components/UI/MasterFeedbackBadgeUI.vue'
-import UserFeedback from './UserFeedback.vue'
+import MasterFeedbackBadge from '@atoms/MasterFeedbackBadge.vue'
+import UserFeedback from '@molecules/UserFeedback.vue'
 import type { Props } from '@/interfaces/ReviewsSectionInterface';
 import { useMasterInfoStore } from '@/stores/MasterInfo';
 
@@ -14,7 +14,7 @@ const masterRaitingWithReviewsCount = masterInfoStore.getMasterRaiting;
 <template>
   <section class="comments rounded-4">
     <h2 class="m-0 mb-3 block-header">Отзывы</h2>
-    <MasterFeedbackBadgeUI 
+    <MasterFeedbackBadge
       :is-reviews-section-badge="true" 
       :feedback-count="masterRaitingWithReviewsCount.feedBackCount" 
       :raiting="masterRaitingWithReviewsCount.rating" 

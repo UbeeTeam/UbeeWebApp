@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import MasterInfo from '@/components/MasterInfo.vue'
-import MasterPortfolio from '@/components/MasterPortfolio.vue'
-import MasterServices from '@/components/MasterServices.vue'
-import ReviewsSection from '@/components/ReviewsSection.vue'
+import MasterInfo from '@organisms/MasterInfo.vue'
+import MasterPortfolio from '@organisms/MasterPortfolio.vue'
+import MasterServices from '@organisms/MasterServices.vue'
+import ReviewsSection from '@organisms/ReviewsSection.vue'
 import { useMasterInfoStore } from '@stores/MasterInfo'
 
 const masterStore = useMasterInfoStore()

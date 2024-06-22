@@ -71,7 +71,7 @@ export const mockData = {
     {
       Id: 2,
       SignedUrl:
-        'https://get.wallhere.com/photo/trees-landscape-mountains-sunset-lake-nature-reflection-sunrise-evening-morning-wilderness-dusk-cloud-autumn-mountain-dawn-meadow-1920x1080-px-loch-computer-wallpaper-mountain-range-623342.jpg',
+        'https://w.forfun.com/fetch/e4/e492830eb852edbef6c88838bb08e377.jpeg',
       Description: 'string'
     },
     {

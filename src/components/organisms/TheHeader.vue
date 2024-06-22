@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IconUI from './UI/IconUI.vue'
+import IconSvg from '@atoms/IconSvg.vue'
 import { computed } from 'vue'
 import { useRoute, RouteLocationNormalized, RouterLink } from 'vue-router'
 
@@ -15,7 +15,7 @@ const isHomePage = computed((): boolean => {
     class="container d-flex justify-content-center align-items-center rounded-bottom-4 header position-relative"
   >
     <RouterLink v-if="!isHomePage" to="/" class="h-24 w-24 header__back">
-      <IconUI :name="'icon-back'" />
+      <IconSvg :name="'icon-back'" />
     </RouterLink>
     <figure class="d-block logo">
       <img src="/src/assets/images/logo.png" alt="logo" class="d-block logo__image" />

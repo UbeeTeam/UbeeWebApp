@@ -23,5 +23,9 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  plugins: ['import'],
+  rules: {
+    'import/no-unresolved': 'error',
+  },
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppointmentSection from '@/components/AppointmentSection.vue'
+import AppointmentSection from '@organisms/AppointmentSection.vue'
 </script>
 
 <template>

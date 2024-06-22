@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MasterAvatarRating from './MasterAvatarRating.vue'
-import AppointmentBookingButton from './UI/AppointmentBookingButton.vue'
-import MasterLocationMap from './MasterLocationMap.vue'
+import MasterAvatarRating from '@molecules/MasterAvatarRating.vue'
+import AppointmentBookingButton from '@atoms/AppointmentBookingButton.vue'
+import MasterLocationMap from '@molecules/MasterLocationMap.vue'
 import type { Props } from '@interfaces/MasterInfoInterface'
 
 defineProps<Props>()

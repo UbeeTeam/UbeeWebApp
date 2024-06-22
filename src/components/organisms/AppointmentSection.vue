@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MasterAvatarRating from '@/components/MasterAvatarRating.vue'
-import AppointmentServices from '@/components/AppointmentServices.vue'
+import MasterAvatarRating from '@molecules/MasterAvatarRating.vue'
+import AppointmentServices from '@atoms/AppointmentServices.vue'
 </script>
 
 <template>
