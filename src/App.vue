@@ -5,9 +5,7 @@ import TheFooter from '@organisms/TheFooter.vue'
 </script>
 
 <template>
-  <TheHeader />
   <RouterView />
-  <TheFooter />
 </template>
 
 <style scoped></style>

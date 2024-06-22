@@ -2,7 +2,7 @@
 import ServiceExperienceBadge from '@atoms/ServiceExperienceBadge.vue'
 import MasterFeedbackBadge from '@atoms/MasterFeedbackBadge.vue'
 import AvatarBase from '@atoms/AvatarBase.vue'
-import type { Props } from '@interfaces/MasterAvatarRatingInterface'
+import type { Props } from '@/types/MasterAvatarRatingInterface'
 
 withDefaults(defineProps<Props>(), {
   isMasterFormPage: false

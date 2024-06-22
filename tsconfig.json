@@ -29,7 +29,9 @@
       "@atoms/*": ["./src/components/atoms/*"],
       "@molecules/*": ["./src/components/molecules/*"],
       "@organisms/*": ["./src/components/organisms/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
+      "@pages/*": ["./src/components/pages/*"],
+      "@templates/*": ["./src/components/templates/*"],
+      "@types/*": ["./src/types/*"],
       "@stores/*": ["./src/stores/*"]
     }
   },

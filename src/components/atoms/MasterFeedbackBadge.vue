@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { Props } from '@interfaces/UI/MasterFeedbackBadge'
+import type { Props } from '@/types/atoms/MasterFeedbackBadge'
 
 withDefaults(defineProps<Props>(), {
   isReviewsSectionBadge: false,

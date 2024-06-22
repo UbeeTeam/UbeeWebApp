@@ -3,7 +3,7 @@ import SwiperSlideImage from '@atoms/SwiperSlideImage.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { breakpoints, pagination } from '@/utils/swiperConstants'
 import { Pagination } from 'swiper/modules'
-import type { Props } from '@interfaces/MasterPortfolioInterface'
+import type { Props } from '@/types/MasterPortfolioInterface'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
