@@ -1,4 +1,4 @@
-export const breakpoints = {
+export const BREAKPOINTS = {
   '240': {
     slidesPerView: 2,
     spaceBetween: 8
@@ -21,7 +21,7 @@ export const breakpoints = {
   }
 }
 
-export const pagination = {
+export const PAGINATION = {
   clickable: true,
   el: '.pagination'
 }

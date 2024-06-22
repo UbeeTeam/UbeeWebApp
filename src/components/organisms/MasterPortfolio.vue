@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SwiperSlideImage from '@atoms/SwiperSlideImage.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { breakpoints, pagination } from '@/utils/swiperConstants'
+import { BREAKPOINTS, PAGINATION } from '@/constants/swiper'
 import { Pagination } from 'swiper/modules'
 import type { Props } from '@/types/components/organisms/MasterPortfolioInterface'
 import 'swiper/css'
@@ -15,10 +15,10 @@ defineProps<Props>()
     <h2 class="m-0 mb-3 block-header">Пример работ</h2>
     <swiper
       :modules="[Pagination]"
-      :breakpoints="breakpoints"
+      :breakpoints="BREAKPOINTS"
       :slides-per-view="1"
       :space-between="8"
-      :pagination="pagination"
+      :pagination="PAGINATION"
       style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms"
     >
       <swiper-slide v-for="portfolio in portfolios" :key="portfolio.Id">

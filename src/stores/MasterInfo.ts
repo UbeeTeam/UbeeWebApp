@@ -1,15 +1,21 @@
-import { computed, reactive } from 'vue'
-import { defineStore } from 'pinia'
-import { mockData } from '@/mockData/mock'
+import { computed, reactive, ref } from 'vue';
+import { defineStore } from 'pinia';
+import { mockData } from '@/mockData/mock';
+import { API_URL_MASTER } from '@/constants/api';
+import axios from 'axios';
+import { useGlobalStore } from '@stores/Global';
 
 export const useMasterInfoStore = defineStore('masterInfo', () => {
+  const globalStore = useGlobalStore();
+
   const masterData = reactive(mockData)
+  const loading = ref(false);
 
   //Actions
 
-  // const fetchMasterInfo = async () => {
-  //   const res = await fetch('');
-  // }
+  const getMasterInfo = async () => {
+    const res = await axios.get(`${API_URL_MASTER}/GetMasterByTokenAsync/`);
+  }
 
   //Getters
 
@@ -26,6 +32,9 @@ export const useMasterInfoStore = defineStore('masterInfo', () => {
 
   return { 
     masterData,
+    loading,
+
+    getMasterInfo,
 
     getMasterRaiting,
     getMasterActivities

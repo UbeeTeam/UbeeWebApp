@@ -7,12 +7,17 @@ import MainTemplate from '@templates/MainTemplate.vue';
 import { useMasterInfoStore } from '@stores/MasterInfo';
 import DownloadBanner from '@organisms/DownloadBanner.vue';
 import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const masterStore = useMasterInfoStore()
 
 const showDownloadBanner = ref(true);
+const token = ref("");
 
 onMounted(() => {
+  token.value = router.params.token || '';
+
   checkStorageAndCloseDownloadBanner();
 })
 

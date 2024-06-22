@@ -32,7 +32,7 @@
       "@pages/*": ["./src/components/pages/*"],
       "@templates/*": ["./src/components/templates/*"],
       "@types/*": ["./src/types/*"],
-      "@stores/*": ["./src/stores/*"]
+      "@stores/*": ["./src/stores/*"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
