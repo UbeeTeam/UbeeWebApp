@@ -105,6 +105,47 @@ body {
   text-transform: uppercase;
 }
 
+.banner-close {
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  position: absolute;
+  right: calc(var(--ubee-gutter) / 4);
+  top: calc(var(--ubee-gutter) / 4);
+  width: 24px;
+  z-index: 2
+}
+
+.banner-close img {
+  display: block;
+  height: 24px;
+  width: 24px
+}
+
+.banner-apps > div {
+  background: var(--bs-white) url("./images/illustration-master.png") -10px 8px/140px auto no-repeat;
+  min-height: 120px;
+  padding-left: 130px !important;
+  position: relative
+}
+
+.banner-apps p {
+  font-size: 14px;
+  line-height: 1.5
+}
+
+.btn-primary {
+  background: var(--ubee-gradient);
+  border: none;
+  border-radius: 20px;
+  color: var(--bs-white);
+  font-family: var(--ubee-font-header);
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: 6px 16px 6px 16px;
+  text-transform: uppercase
+}
+
 .master {
   background-color: var(--bs-white);
   margin-bottom: var(--ubee-base);
