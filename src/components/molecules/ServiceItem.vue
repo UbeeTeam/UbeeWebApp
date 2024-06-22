@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/types/ServiceItemInterface'
+import type { Props } from '@/types/components/molecules/ServiceItemInterface'
 
 defineProps<Props>()
 </script>

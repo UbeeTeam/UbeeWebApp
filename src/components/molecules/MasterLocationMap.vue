@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { MapboxMap } from 'vue-mapbox-ts'
 import mapboxgl from 'mapbox-gl'
-import type { Props } from '@/types/MasterLocationMapInterface'
+import type { Props } from '@/types/components/molecules/MasterLocationMapInterface'
 
 const props = defineProps<Props>()
 

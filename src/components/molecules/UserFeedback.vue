@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/types/UserFeedbackInterface';
+import type { Props } from '@/types/components/molecules/UserFeedbackInterface';
 import { useMasterInfoStore } from '@/stores/MasterInfo';
 import { computed } from 'vue';
 import moment from 'moment';

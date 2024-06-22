@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/types/SwiperSlideImageInterface'
+import type { Props } from '@/types/components/atoms/SwiperSlideImageInterface'
 
 defineProps<Props>()
 </script>

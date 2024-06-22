@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/types/atoms/AvatarUIInterface'
+import type { Props } from '@/types/components/atoms/AvatarBaseInterface'
 
 withDefaults(defineProps<Props>(), {
   isSmallAvatar: false,

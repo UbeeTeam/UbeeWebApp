@@ -2,7 +2,7 @@
 import MasterAvatarRating from '@molecules/MasterAvatarRating.vue'
 import AppointmentBookingButton from '@atoms/AppointmentBookingButton.vue'
 import MasterLocationMap from '@molecules/MasterLocationMap.vue'
-import type { Props } from '@/types/MasterInfoInterface'
+import type { Props } from '@/types/components/organisms/MasterInfoInterface'
 
 defineProps<Props>()
 </script>

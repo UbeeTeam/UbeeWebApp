@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ServiceItem from '@molecules/ServiceItem.vue'
-import type { Props } from '@/types/MasterServiceInterface'
+import type { Props } from '@/types/components/organisms/MasterServiceInterface'
 
 defineProps<Props>()
 </script>

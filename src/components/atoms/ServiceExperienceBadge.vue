@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Props } from '@/types/atoms/ServiceExperienceBadgeUIInterface'
+import type { Props } from '@/types/components/atoms/ServiceExperienceBadgeInterface'
 
 defineProps<Props>()
 </script>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MasterFeedbackBadge from '@atoms/MasterFeedbackBadge.vue'
 import UserFeedback from '@molecules/UserFeedback.vue'
-import type { Props } from '@/types/ReviewsSectionInterface';
+import type { Props } from '@/types/components/organisms/ReviewsSectionInterface';
 import { useMasterInfoStore } from '@/stores/MasterInfo';
 
 defineProps<Props>();
