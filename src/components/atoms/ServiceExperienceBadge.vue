@@ -6,7 +6,7 @@ defineProps<Props>()
 
 <template>
   <div class="d-flex flex-nowrap rounded-pill master-skill">
-    <span>{{ activity.ActivityTemplateName }}</span>
-    <span class="rounded-pill">{{ activity.Experience }}</span>
+    <span>{{ activity.activityTemplateName }}</span>
+    <span class="rounded-pill">{{ activity.experience }}</span>
   </div>
 </template>

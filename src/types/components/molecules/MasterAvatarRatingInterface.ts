@@ -1,4 +1,6 @@
+import type { Master } from "@types/api/Master"
+
 export interface Props {
-  isMasterFormPage?: boolean
-  masterData: any // Добавить тип
+  isMasterFormPage?: boolean,
+  masterData: Master
 }

@@ -21,8 +21,8 @@ defineProps<Props>()
       :pagination="PAGINATION"
       style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); transition-delay: 0ms"
     >
-      <swiper-slide v-for="portfolio in portfolios" :key="portfolio.Id">
-        <SwiperSlideImage :key="portfolio.Id" :portfolio="portfolio" />
+      <swiper-slide v-for="portfolio in portfolios" :key="portfolio.id">
+        <SwiperSlideImage :key="portfolio.id" :portfolio="portfolio" />
       </swiper-slide>
     </swiper>
     <div class="pagination swiper-pagination"></div>

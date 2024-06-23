@@ -167,6 +167,7 @@ body {
 .master-avatar__image {
   height: 72px;
   width: 72px;
+  scale: 1.1;
 }
 
 .master-avatar__small {
@@ -190,11 +191,6 @@ body {
   overflow: hidden;
   right: 12px;
   top: 0;
-}
-
-.master-avatar__image {
-  height: 92px;
-  width: 92px;
 }
 
 .master-skills {
@@ -257,6 +253,8 @@ body {
 
 .portfolio-image > img {
   max-width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
 }
 
 .comments {

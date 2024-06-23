@@ -12,6 +12,6 @@ defineProps<Props>()
     style="width: 113.333px; margin-right: 8px"
   >
     <!--инлайн-->
-    <img :src="portfolio.SignedUrl" alt="swiper slide image" />
+    <img :src="portfolio.signedUrl" alt="swiper slide image" />
   </figure>
 </template>

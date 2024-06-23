@@ -23,7 +23,7 @@ const masterRaitingWithReviewsCount = masterInfoStore.getMasterRaiting;
       <UserFeedback 
         v-for="review in reviews"
         :review="review"
-        :key="review.Id"
+        :key="review.id"
       />
     </ul>
   </section>

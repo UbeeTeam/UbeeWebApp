@@ -1,3 +1,5 @@
+import type { Portfolio } from "@/types/api/Master"
+
 export interface Props {
-  portfolios: any // Добавить тип
+  portfolios: Portfolio[]
 }

@@ -6,7 +6,7 @@ import CloseCircleButton from '@atoms/CloseCircleButton.vue';
 const emits = defineEmits(['closeDownloadBanner']);
 
 const closeDownloadBannerAndSetStorage = () => {
-    localStorage.setItem('isUserCloseDownloadBanner', false);
+    localStorage.setItem('isUserCloseDownloadBanner', String(false));
     emits('closeDownloadBanner');
 }
 </script>

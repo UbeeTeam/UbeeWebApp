@@ -5,18 +5,21 @@ import MasterServices from '@organisms/MasterServices.vue';
 import ReviewsSection from '@organisms/ReviewsSection.vue';
 import MainTemplate from '@templates/MainTemplate.vue';
 import { useMasterInfoStore } from '@stores/MasterInfo';
+import { useGlobalStore } from '@stores/Global';
 import DownloadBanner from '@organisms/DownloadBanner.vue';
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
-const router = useRouter();
+const route = useRoute();
 const masterStore = useMasterInfoStore()
 
-const showDownloadBanner = ref(true);
-const token = ref("");
+const showDownloadBanner = ref<boolean>(true);
+const token = ref<string>("");
 
-onMounted(() => {
-  token.value = router.params.token || '';
+onMounted(async() => {
+  const tokenString = route.params.token as string;
+  token.value = tokenString || '';
+  await masterStore.getMasterInfo(token.value);
 
   checkStorageAndCloseDownloadBanner();
 })
@@ -29,19 +32,18 @@ const checkStorageAndCloseDownloadBanner = () => {
 </script>
 
 <template>
- <MainTemplate>
+ <MainTemplate v-if="masterStore.masterData">
   <template v-if="showDownloadBanner" #banner-slot>
     <DownloadBanner @close-download-banner="showDownloadBanner = false"/>
   </template>
 
-   <MasterInfo :master-data="masterStore.masterData.master" />
-   <MasterPortfolio :portfolios="masterStore.masterData.Portfolios" />
+   <MasterInfo :master-data="masterStore.masterData" />
+   <MasterPortfolio :portfolios="masterStore.masterData.portfolios" />
    <MasterServices
-     :master-services="masterStore.masterData.master.MasterServices"
-     :master-activities="masterStore.masterData.master.MasterActivities"
+     :master-activities="masterStore.masterData.masterActivities"
    />
    <ReviewsSection 
-     :reviews="masterStore.masterData.Feedbacks"
+     :reviews="masterStore.masterData.feedbacks"
    />
  </MainTemplate>
 </template>

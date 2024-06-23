@@ -9,7 +9,7 @@ defineProps<Props>()
 
 <template>
   <section class="master rounded-4">
-    <h2 class="m-0 mb-3 block-header">{{ masterData.Name }}</h2>
+    <h2 class="m-0 mb-3 block-header">{{ masterData.fullName }}</h2>
     <div class="row">
       <div class="col-12 col-md-7">
         <MasterAvatarRating :master-data="masterData" />
@@ -20,14 +20,14 @@ defineProps<Props>()
 
       <div class="col-12 col-md-5 mt-3 mt-md-0 master-map">
         <MasterLocationMap
-          :avatar-url="masterData.AvatarSignedUrl"
-          :coordinates="[masterData.GeoLatitude, masterData.GeoLongitude]"
+          :avatar-url="masterData.avatarSignedUrl"
+          :coordinates="[masterData.geoLatitude, masterData.geoLongitude]"
         />
       </div>
     </div>
     <div class="row mt-3 master-description">
       <div class="col">
-        {{ masterData.Description }}
+        {{ masterData?.description }}
       </div>
     </div>
   </section>

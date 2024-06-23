@@ -1,16 +1,6 @@
+import type { MasterActivity, MasterService } from "@/types/api/Master"
+
 export interface Props {
-  masterActivity: {
-    Id: number
-    ActivityTemplateId: number
-    ActivityTemplateName: string
-    ExperienceStartYear: number
-    Experience: string
-  } // Добавить тип
-  masterServices: {
-    Id: number
-    MasterActivityId: number
-    Name: string
-    Cost: number
-    Duration: number
-  }[] // Добавить тип
+  masterActivity: MasterActivity,
+  masterServices: MasterService[]
 }

@@ -1,3 +1,5 @@
+import type { MasterActivity } from "@types/api/Master"
+
 export interface Props {
-  activity: any // Добавить тип
+  activity: MasterActivity,
 }

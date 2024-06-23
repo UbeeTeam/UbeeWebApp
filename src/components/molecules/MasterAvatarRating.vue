@@ -11,17 +11,17 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div class="d-flex align-items-center justify-content-center master-info">
-    <AvatarBase :is-small-avatar="isMasterFormPage" :src="masterData.AvatarSignedUrl" />
+    <AvatarBase :is-small-avatar="isMasterFormPage" :src="masterData.avatarSignedUrl" />
     <div class="d-flex flex-wrap ms-2 p-0 master-skills">
       <ServiceExperienceBadge
-        v-for="activity in masterData.MasterActivities"
-        :key="activity.Id"
+        v-for="activity in masterData.masterActivities"
+        :key="activity.id"
         :activity="activity"
       />
       <MasterFeedbackBadge
         :is-master-form-page="isMasterFormPage"
-        :raiting="masterData.Rating"
-        :feedback-count="masterData.FeedBackCount"
+        :raiting="masterData.rating"
+        :feedback-count="masterData.feedBackCount"
       />
     </div>
   </div>

@@ -11,20 +11,20 @@ defineProps<Props>()
         class="d-flex flex-column justify-content-start align-items-start pe-4 accordion-button collapsed"
         type="button"
         data-bs-toggle="collapse"
-        :data-bs-target="`#service${masterActivity.Id}`"
+        :data-bs-target="`#service${masterActivity.id}`"
         aria-expanded="false"
-        :aria-controls="`#service${masterActivity.Id}`"
+        :aria-controls="`#service${masterActivity.id}`"
       >
-        <strong>{{ masterActivity.ActivityTemplateName }}</strong>
-        <span class="mt-1">Опыт работы&nbsp;— {{ masterActivity.Experience }}</span>
+        <strong>{{ masterActivity.activityTemplateName }}</strong>
+        <span class="mt-1">Опыт работы&nbsp;— {{ masterActivity.experience }}</span>
       </button>
     </h2>
-    <div :id="`service${masterActivity.Id}`" class="accordion-collapse collapse">
+    <div :id="`service${masterActivity.id}`" class="accordion-collapse collapse">
       <div class="accordion-body service-content">
         <ul class="m-0 p-0 service-items">
-          <li v-for="service in masterServices" :key="service.Id" class="d-flex service-item">
-            <span class="w-100">{{ service.Name }}</span>
-            <strong class="flex-shrink-0">{{ service.Cost }} ₽</strong>
+          <li v-for="service in masterServices" :key="service.id" class="d-flex service-item">
+            <span class="w-100">{{ service.serviceName }}</span>
+            <strong class="flex-shrink-0">{{ service.cost }} ₽</strong>
           </li>
         </ul>
       </div>

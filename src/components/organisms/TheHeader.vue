@@ -6,7 +6,8 @@ import { useRoute, RouteLocationNormalized, RouterLink } from 'vue-router'
 const route = useRoute()
 
 const isHomePage = computed((): boolean => {
-  return (route as RouteLocationNormalized).path === '/'
+  return (route as RouteLocationNormalized).meta.view === 'masterProfile' ||
+  (route as RouteLocationNormalized).meta.view === 'notFoundPage'
 })
 </script>
 

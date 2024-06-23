@@ -13,9 +13,7 @@ defineProps<Props>()
         v-for="activity in masterActivities"
         :key="activity.Id"
         :master-activity="activity"
-        :master-services="
-          masterServices.filter((service) => activity.Id === service.MasterActivityId)
-        "
+        :master-services="activity.masterServices"
       />
     </div>
   </section>

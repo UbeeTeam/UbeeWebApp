@@ -9,22 +9,22 @@ const props = defineProps<Props>();
 const masterInfoStore = useMasterInfoStore();
 const masterActivities = masterInfoStore.getMasterActivities;
 
-const getMasterActivitiesFromReview = () => {
-  return props.review.MasterActivityIds
-    .map(reviewActivityId => masterActivities.find(activity => activity.Id === reviewActivityId))
-    .filter(masterActivity => masterActivity)
-    .map(masterActivity => masterActivity?.ActivityTemplateName)
-    .join(', ');
-};
+// const getMasterActivitiesFromReview = () => {
+//   return props.review.masterActivityIds
+//     .map(reviewActivityId => masterActivities.find(activity => activity.Id === reviewActivityId))
+//     .filter(masterActivity => masterActivity)
+//     .map(masterActivity => masterActivity?.ActivityTemplateName)
+//     .join(', ');
+// };
 
 const getReviewPublicateDate = () => {
-  return moment.unix(+props.review.PublishDate).format('DD.MM.YYYY');
+  return moment.unix(+props.review.publishDate).format('DD.MM.YYYY');
 };
 
 const getRoundRaiting = computed(() => {
   return {
-    yellowStars: Math.round(props.review.Rate),
-    blueStar: 5-Math.round(props.review.Rate),
+    yellowStars: Math.round(props.review.rate),
+    blueStar: 5-Math.round(props.review.rate),
   };
 });
 </script>
@@ -32,14 +32,14 @@ const getRoundRaiting = computed(() => {
 <template>
   <li class="review">
     <h5 class="d-flex justify-content-between align-items-center m-0">
-      <span>{{ review.CustomerName }}</span>
+      <span>{{ review.customerName }}</span>
       <figure class="d-flex m-0">
         <img v-for="yellowStar in getRoundRaiting.yellowStars" src="/src/assets/svg/icon-rating-star-yellow.svg" alt="" />
         <img v-for="blueStar in getRoundRaiting.blueStar" src="/src/assets/svg/icon-rating-star-blue.svg" alt="" />
       </figure>
     </h5>
-    <strong>{{ getMasterActivitiesFromReview() }}</strong>
-    <p class="my-1">{{ review.Comment }}</p>
+    <!-- <strong>{{ getMasterActivitiesFromReview() }}</strong> -->
+    <p class="my-1">{{ review.comment }}</p>
     <span>Опубликовано — {{ getReviewPublicateDate() }}</span>
   </li>
 </template>
