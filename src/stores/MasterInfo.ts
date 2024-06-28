@@ -14,7 +14,7 @@ export const useMasterInfoStore = defineStore('masterInfo', () => {
 
   const getMasterInfo = async (token: string) => {
     try {
-      const res = await axios.get(`${API_URL_MASTER}/GetMasterByTokenAsync/${token}`);
+      const res = await axios.get(`${API_URL_MASTER}/GetByTokenAsync/${token}`);
       
       masterData.value = res.data;
     } catch (error) {

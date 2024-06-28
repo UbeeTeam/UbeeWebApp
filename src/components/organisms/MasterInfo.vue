@@ -22,6 +22,7 @@ defineProps<Props>()
         <MasterLocationMap
           :avatar-url="masterData.avatarSignedUrl"
           :coordinates="[masterData.geoLatitude, masterData.geoLongitude]"
+          class="rounded-2"
         />
       </div>
     </div>

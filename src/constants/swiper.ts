@@ -1,24 +1,20 @@
 export const BREAKPOINTS = {
-  '240': {
+  "240": {
     slidesPerView: 2,
-    spaceBetween: 8
+    spaceBetween: 4,
   },
-  '320': {
+  "320": {
     slidesPerView: 3,
-    spaceBetween: 8
+    spaceBetween: 4,
   },
-  '576': {
+  "576": {
     slidesPerView: 4,
-    spaceBetween: 8
+    spaceBetween: 4,
   },
-  '768': {
+  "768": {
     slidesPerView: 6,
-    spaceBetween: 8
+    spaceBetween: 4,
   },
-  '1200': {
-    slidesPerView: 8,
-    spaceBetween: 8
-  }
 }
 
 export const PAGINATION = {

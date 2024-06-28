@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { Props } from '@/types/components/molecules/ServiceItemInterface'
+import type { Props } from '@/types/components/molecules/ServiceItemInterface';
+import ServiceOption from '@atoms/ServiceOption.vue';
 
 defineProps<Props>()
 </script>
@@ -22,10 +23,14 @@ defineProps<Props>()
     <div :id="`service${masterActivity.id}`" class="accordion-collapse collapse">
       <div class="accordion-body service-content">
         <ul class="m-0 p-0 service-items">
-          <li v-for="service in masterServices" :key="service.id" class="d-flex service-item">
+          <ServiceOption
+            v-for="service in masterServices"
+            :service="service"
+          />
+          <!-- <li v-for="service in masterServices" :key="service.id" class="d-flex service-item">
             <span class="w-100">{{ service.serviceName }}</span>
             <strong class="flex-shrink-0">{{ service.cost }} ₽</strong>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

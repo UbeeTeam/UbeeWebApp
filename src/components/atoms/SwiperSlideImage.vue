@@ -5,13 +5,13 @@ defineProps<Props>()
 </script>
 
 <template>
-  <figure
-    class="ratio-1x1 rounded-3 swiper-slide portfolio-image swiper-slide-active"
+  <a
+    class="ratio-1x1 rounded-2 swiper-slide portfolio-image swiper-slide-active"
     role="group"
     aria-label="1 / 8"
-    style="width: 113.333px; margin-right: 8px"
+    style="width: 144.667px;"
   >
     <!--инлайн-->
     <img :src="portfolio.signedUrl" alt="swiper slide image" />
-  </figure>
+</a>
 </template>
