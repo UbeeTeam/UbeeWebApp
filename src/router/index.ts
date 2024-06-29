@@ -11,7 +11,7 @@ const router = createRouter({
       component: MasterProfileView,
       props: true,
       meta: {
-        view: 'masterProfile',
+        view: 'masterProfileView',
       }
     },
     {
@@ -20,8 +20,17 @@ const router = createRouter({
       component: () => import('@/views/MasterFormView.vue'),
       meta: {
         view: 'masterFormView',
+      },
+    },
+    {
+      path: '/error',
+      name: 'notFoundPage',
+      component: NotFoundView,
+      meta: {
+        view: 'notFoundView',
       }
     }
+
   ]
 })
 

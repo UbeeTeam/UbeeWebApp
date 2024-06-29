@@ -27,10 +27,6 @@ defineProps<Props>()
             v-for="service in masterServices"
             :service="service"
           />
-          <!-- <li v-for="service in masterServices" :key="service.id" class="d-flex service-item">
-            <span class="w-100">{{ service.serviceName }}</span>
-            <strong class="flex-shrink-0">{{ service.cost }} ₽</strong>
-          </li> -->
         </ul>
       </div>
     </div>

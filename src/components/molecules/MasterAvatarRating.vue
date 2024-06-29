@@ -10,7 +10,10 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="d-flex align-items-center justify-content-center master-info">
+  <div 
+    class="d-flex align-items-center master-info"
+    :class="{'justify-content-center' : !isMasterFormPage}"
+  >
     <AvatarBase :is-small-avatar="isMasterFormPage" :src="masterData.avatarSignedUrl" />
     <div class="d-flex flex-wrap ms-2 p-0 master-skills">
       <ServiceExperienceBadge

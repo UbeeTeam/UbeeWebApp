@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import AppointmentSection from '@organisms/AppointmentSection.vue'
+import MasterFormPage from '@/components/pages/MasterFormPage.vue';
 </script>
 
 <template>
-  <main class="container p-0 main">
-    <AppointmentSection />
-  </main>
+  <MasterFormPage/>
 </template>

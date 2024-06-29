@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import IconSvg from '@atoms/IconSvg.vue'
-import { computed } from 'vue'
-import { useRoute, RouteLocationNormalized, RouterLink } from 'vue-router'
+import IconSvg from '@atoms/IconSvg.vue';
+import { computed } from 'vue';
+import { useRoute, RouteLocationNormalized, RouterLink } from 'vue-router';
+import RouterBackLink from '@molecules/RouterBackLink.vue';
 
 const route = useRoute()
 
-const isHomePage = computed((): boolean => {
-  return (route as RouteLocationNormalized).meta.view === 'masterProfile' ||
-  (route as RouteLocationNormalized).meta.view === 'notFoundPage'
+const isMaterFormPage = computed((): boolean => {
+  return (route as RouteLocationNormalized).meta.view === 'masterFormView';
 })
 </script>
 
@@ -15,9 +15,9 @@ const isHomePage = computed((): boolean => {
   <header
     class="container d-flex justify-content-center align-items-center rounded-bottom-4 header position-relative"
   >
-    <RouterLink v-if="!isHomePage" to="/" class="h-24 w-24 header__back">
+    <RouterBackLink v-if="isMaterFormPage" to="/" class="h-24 w-24 header__back">
       <IconSvg :name="'icon-back'" />
-    </RouterLink>
+    </RouterBackLink>
     <figure class="d-block logo">
       <img src="/src/assets/images/logo.png" alt="logo" class="d-block logo__image" />
     </figure>
