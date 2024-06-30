@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Props } from '@/types/components/atoms/SwiperSlideImageInterface'
+import type { Props } from '@/types/components/atoms/SwiperSlideImageInterface';
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>
@@ -11,7 +11,6 @@ defineProps<Props>()
     aria-label="1 / 8"
     style="width: 144.667px;"
   >
-    <!--инлайн-->
     <img :src="portfolio.signedUrl" alt="swiper slide image" />
 </a>
 </template>

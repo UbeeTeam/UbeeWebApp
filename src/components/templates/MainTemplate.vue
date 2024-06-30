@@ -27,8 +27,15 @@ const checkStorageAndCloseDownloadBanner = () => {
             v-if="showDownloadBanner" 
             @close-download-banner="showDownloadBanner = false"
         />
+        <LoaderSpinner
+          v-if="globalStore.loading" 
+          :is-modal="globalStore.loading"
+        />
         <TheHeader/>
-            <LoaderSpinner v-if="globalStore.initializing"/>
+            <LoaderSpinner 
+              v-if="globalStore.initializing" 
+              :is-modal="false"
+            />
             <main v-else class="container p-0 main">
                 <slot/>
             </main>

@@ -16,6 +16,7 @@ const token = ref<string>("");
 onMounted(async() => {
   const tokenString = route.params.token as string;
   token.value = tokenString || '';
+  masterStore.setMasterToken(token.value);
   await masterStore.getMasterInfo(token.value);
 })
 </script>

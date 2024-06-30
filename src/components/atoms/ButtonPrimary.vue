@@ -6,5 +6,5 @@ defineProps<Props>();
 </script>
 
 <template>
-   <button class="btn-primary">{{ buttonText }}</button>
+   <button :class="classes">{{ buttonText }}</button>
 </template>

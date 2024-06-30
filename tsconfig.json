@@ -24,6 +24,7 @@
     "lib": ["dom", "ES2015", "es2015"],
     "types": ["vue-router", "vite/client", "vue", "node"],
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./src/types/**/*.ts"],
     "paths": {
       "@/*": ["./src/*"],
       "@atoms/*": ["./src/components/atoms/*"],

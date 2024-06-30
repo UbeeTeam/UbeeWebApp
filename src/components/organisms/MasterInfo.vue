@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MasterAvatarRating from '@molecules/MasterAvatarRating.vue'
-import AppointmentBookingButton from '@atoms/AppointmentBookingButton.vue'
+import ButtonPrimary from '@atoms/ButtonPrimary.vue';
 import MasterLocationMap from '@molecules/MasterLocationMap.vue'
 import type { Props } from '@/types/components/organisms/MasterInfoInterface'
 
@@ -14,7 +14,12 @@ defineProps<Props>()
       <div class="col-12 col-md-7">
         <MasterAvatarRating :master-data="masterData" />
         <RouterLink to="/master-form">
-          <AppointmentBookingButton />
+          <div class="mt-3 master-button">
+            <ButtonPrimary 
+              :button-text="'Записаться'"
+              :classes="'btn btn-primary px-3 py-2 rounded-pill w-100'"
+            />
+          </div>
         </RouterLink>
       </div>
 

@@ -1,15 +1,36 @@
 <script setup lang="ts">
+import type { Props } from '@/types/components/molecules/LoaderSpinnerInterface';
+defineProps<Props>();
 
 </script>
 
 <template>
+  <div v-if="isModal" class="modal-overlay">
     <div class="spinner-container">
         <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
+  </div>
+  <div v-else class="spinner-container">
+      <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный серый фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .spinner-container {
+    z-index: 1001;
     display: flex;
     width: 100%;
     height: 65vh;

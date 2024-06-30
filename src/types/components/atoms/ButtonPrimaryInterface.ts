@@ -1,3 +1,4 @@
 export interface Props {
-    buttonText: string;
+    buttonText: string,
+    classes: string,
 }

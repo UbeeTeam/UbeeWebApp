@@ -2,11 +2,12 @@
 import type { Props } from '@/types/components/molecules/UserFeedbackInterface';
 import { computed } from 'vue';
 import moment from 'moment';
+import { format } from 'date-fns';
 
 const props = defineProps<Props>();
 
 const getReviewPublicateDate = () => {
-  return moment.unix(+props.review.publishDate).format('DD.MM.YYYY');
+  return format(props.review.publishDate, 'dd.MM.yyyy');
 };
 
 const getRoundRaiting = computed(() => {

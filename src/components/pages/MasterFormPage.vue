@@ -10,7 +10,7 @@ const router = useRouter();
 
 onMounted(async () => {
     if (!masterStore.masterData) {
-        const masterTokenFromStorage = localStorage.getItem("masterToken");
+        const masterTokenFromStorage = masterStore.masterToken;
 
         if (masterTokenFromStorage) {
             await masterStore.getMasterInfo(masterTokenFromStorage);
