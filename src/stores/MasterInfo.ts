@@ -4,10 +4,11 @@ import { API_URL_MASTER } from '@/constants/api';
 import axios from 'axios';
 import { useGlobalStore } from '@/stores/Global';
 import type { Master, FreeTimeSlots } from '@/types/api/Master';
-import type { ServiceEvent } from '@/types/components/actions/services/ServiceEvent';
+import type { ServiceEvent } from '@/types/components/actions/services/serviceEvent';
 import { ServiceActions } from '@/types/components/actions/services/serviceActions';
 
-export const useMasterInfoStore = defineStore('masterInfo', () => {
+
+export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const globalStore = useGlobalStore();
 
   const masterData = ref<Master>();

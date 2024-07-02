@@ -4,6 +4,7 @@ import TheFooter from '@organisms/TheFooter.vue';
 import LoaderSpinner from '@molecules/LoaderSpinner.vue';
 import { useGlobalStore } from '@stores/Global';
 import DownloadBanner from '@organisms/DownloadBanner.vue';
+import UniversalModalWindow from '@organisms/UniversalModalWindow.vue';
 import { ref, onMounted } from 'vue';
 
 const globalStore = useGlobalStore();
@@ -31,6 +32,7 @@ const checkStorageAndCloseDownloadBanner = () => {
           v-if="globalStore.loading" 
           :is-modal="globalStore.loading"
         />
+        <UniversalModalWindow/>
         <TheHeader/>
             <LoaderSpinner 
               v-if="globalStore.initializing" 

@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/:token',
+      path: '/master/:token',
       name: 'masterProfile',
       component: MasterProfileView,
       props: true,

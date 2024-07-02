@@ -8,12 +8,27 @@ import AppointmentDate from '@molecules/AppointmentDate.vue';
 import { useMasterInfoStore } from '@/stores/MasterInfo';
 import AppointmentComment from '@molecules/AppointmentComment.vue';
 import AppointmentTimeSlots from '@molecules/AppointmentTimeSlots.vue';
-import ButtonPrimary from '../atoms/ButtonPrimary.vue';
+import ButtonPrimary from '@atoms/ButtonPrimary.vue';
+import AppointmentModal from '@organisms/AppointmentModal.vue';
+import { useGlobalStore } from '@/stores/Global';
+import ModalTemplate from '@templates/ModalTemplate.vue';
+import { shallowRef } from 'vue';
 
 defineProps<Props>();
 
 const masterStore = useMasterInfoStore();
+const globalStore = useGlobalStore();
 
+const showAppointmentModal = () => {
+  globalStore.openModal({
+    content :shallowRef(AppointmentModal),
+    template: shallowRef(ModalTemplate),
+    templateProps: {
+      title: 'Авторизация',
+      nextButtonText: 'Далее...',
+    }
+  });
+}
 </script>
 
 <template>
@@ -39,6 +54,7 @@ const masterStore = useMasterInfoStore();
     <AppointmentComment/>
     <div class="mt-4 appointment-button">
       <ButtonPrimary
+        @click="showAppointmentModal"
         :button-text="'Записаться'"
         :classes="'btn btn-primary px-3 rounded-pill'"
       />
