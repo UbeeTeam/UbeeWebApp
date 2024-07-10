@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Props } from '@/types/components/molecules/UserFeedbackInterface';
 import { computed } from 'vue';
-import moment from 'moment';
 import { format, parse } from 'date-fns';
 
 const props = defineProps<Props>();
@@ -28,6 +27,7 @@ const getRoundRaiting = computed(() => {
         <img v-for="blueStar in getRoundRaiting.blueStar" src="/src/assets/svg/icon-rating-star-blue.svg" alt="" />
       </figure>
     </h5>
+    <strong>{{ review.masterActivitys[0] }}</strong>
     <p class="my-1">{{ review.comment }}</p>
     <span>Опубликовано — {{ getReviewPublicateDate() }}</span>
   </li>

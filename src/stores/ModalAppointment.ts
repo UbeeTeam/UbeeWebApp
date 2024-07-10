@@ -4,7 +4,6 @@ import { ModalAppointmentSteps } from '@/types/enums/modalAppointmentSteps';
 import { useGlobalStore } from './Global';
 
 export const useModalStore = defineStore('modalAppointmentStore', () => {
-    const globalStore = useGlobalStore();
 
     const currentStepForAppointmentModal = ref<ModalAppointmentSteps>(ModalAppointmentSteps.PHONE_NUMBER);
     const isProceedButtonEnableForAppointmentModal = ref<boolean>(true);
@@ -33,8 +32,19 @@ export const useModalStore = defineStore('modalAppointmentStore', () => {
         }
     };
 
-    const changeCurrentSterFor = (appointmentStep: ModalAppointmentSteps) => {
+    const changeCurrentSterFor = async (appointmentStep: ModalAppointmentSteps): Promise<void> => {
         currentStepForAppointmentModal.value = appointmentStep;
+        isWaitingBeforeNextStep.value = true;
+        await new Promise<void>((resolve) => {
+            const stopWaiting = () => {
+                if (!isWaitingBeforeNextStep.value) {
+                  resolve();
+                } else {
+                  setTimeout(stopWaiting, 100);
+                }
+            };
+            stopWaiting();
+        });
     }
 
     const setValueIsProceedButtonEnableForAppointmentModal = (value: boolean) => {

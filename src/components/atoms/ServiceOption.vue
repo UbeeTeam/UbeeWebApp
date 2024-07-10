@@ -16,12 +16,14 @@ const toggleServiceAdd = () => {
     if (!isInputChecked.value) {
         masterStore.changeCountServicesAndTotalPriceAddedToAppointment({
             action: ServiceActions.ADD,
-            price: props.service.cost
+            price: props.service.cost,
+            serviceId: props.service.id,
         });
     } else {
         masterStore.changeCountServicesAndTotalPriceAddedToAppointment({
             action: ServiceActions.DELETE,
-            price: props.service.cost
+            price: props.service.cost,
+            serviceId: props.service.id,
         });
     }
 }

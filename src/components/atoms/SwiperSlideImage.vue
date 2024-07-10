@@ -9,7 +9,7 @@ defineProps<Props>();
     class="ratio-1x1 rounded-2 swiper-slide portfolio-image swiper-slide-active"
     role="group"
     aria-label="1 / 8"
-    style="width: 144.667px;"
+    style="width: 101px; margin-right: 4px;"
   >
     <img :src="portfolio.signedUrl" alt="swiper slide image" />
 </a>

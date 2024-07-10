@@ -4,9 +4,10 @@ import { useModalStore } from '@/stores/ModalAppointment';
 import type { Props } from '@/types/components/templates/ModalTemplateInterface';
 import { ModalAppointmentSteps } from '@/types/enums/modalAppointmentSteps';
 import ButtonPrimary from '@atoms/ButtonPrimary.vue';
-import { provide, ref } from 'vue';
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+    isShowFooter: true,
+});
 const globalStore = useGlobalStore();
 const modalStore = useModalStore();
 
@@ -32,7 +33,7 @@ const nextAction = () => {
             
         />
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" v-if="isShowFooter">
         <ButtonPrimary
             @click="nextAction"
             :disabled="modalStore.isProceedButtonEnableForAppointmentModal"

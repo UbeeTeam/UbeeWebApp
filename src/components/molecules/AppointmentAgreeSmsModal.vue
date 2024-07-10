@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useModalStore } from '@/stores/ModalAppointment';
-import { ModalAppointmentSteps } from '@/types/enums/modalAppointmentSteps';
 
 const modalStore = useModalStore();
 
@@ -27,18 +26,18 @@ watch(() => model.value, (newValue) => {
     }
 })
 
-const changeModalStepForSmsVerifier = () => {
-    modalStore.changeCurrentSterFor(ModalAppointmentSteps.SMS_CODE);
+const sendSmsVerifier = () => {
+    // todo
 }
 </script>
 
 <template>
-    <p>Введите последние 4 цифры номера, с которого сейчас поступит звонок.</p>
+    <p>Мы отправили вам SMS с кодом — введите его в поле ниже.</p>
     <div class="my-3">
         <input type="text" v-model="model" class="form-control">
     </div>
     <p v-if="!isVerifieCodeValid && isVerifieCodeEnter" style="color: red;">Код должен состоять из 4 цифр</p>
-    <p class="appointment-agree" @click="changeModalStepForSmsVerifier">
-        <p href="#">Получить код по SMS</p>
+    <p class="appointment-agree" @click="sendSmsVerifier">
+        <a href="#">Отправить SMS ещё раз</a>
     </p>
 </template>

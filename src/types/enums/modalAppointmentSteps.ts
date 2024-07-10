@@ -1,7 +1,8 @@
 export enum ModalAppointmentSteps {
     PHONE_NUMBER,
-    SMS_CODE,
+    CALL_CODE,
     NAME_CONFIRMATION,
     REGISTRATION,
-    SUCCESS
+    SMS_CODE,
+    SUCCESS,
 }

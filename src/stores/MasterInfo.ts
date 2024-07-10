@@ -15,8 +15,12 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const masterToken = ref<string | null>(localStorage.getItem("masterToken"));
   const masterFreeTimeSlotsForDate = ref<FreeTimeSlots>();
 
+  const selectedTime = ref<{date: string, timeSlot: string}>({date: '', timeSlot: ''});
+  const description = ref<string>('');
+
   const countServicesAddedToAppointment = ref<number>(0);
   const totalPriceOfServicesToAppointment = ref<number>(0);
+  const listOfServicesAddedToAppointment = ref<Array<number>>([]);
 
   //Actions
 
@@ -45,16 +49,36 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
     }
   }
 
-  const changeCountServicesAndTotalPriceAddedToAppointment = ({action, price}: ServiceEvent) => {
+  const setSelectedDate = (date: string) => {
+    if (selectedTime.value) {
+      selectedTime.value.date = date;      
+    }
+  }
+
+  const setSelectedTime = (timeSlot: string) => {
+    if (selectedTime.value) {
+      selectedTime.value.timeSlot = timeSlot;
+      console.log(timeSlot);
+      
+    }
+  }
+
+  const setDescription = (desc: string) => {
+    description.value = desc;
+  }
+
+  const changeCountServicesAndTotalPriceAddedToAppointment = ({action, price, serviceId}: ServiceEvent) => {
     switch (action) {
       case ServiceActions.ADD: {
         countServicesAddedToAppointment.value++;
         totalPriceOfServicesToAppointment.value += price;
+        listOfServicesAddedToAppointment.value.push(serviceId);
         break;
       }
       case ServiceActions.DELETE: {
         countServicesAddedToAppointment.value = Math.max(0, countServicesAddedToAppointment.value - 1);
         totalPriceOfServicesToAppointment.value = Math.max(0, totalPriceOfServicesToAppointment.value - price);
+        listOfServicesAddedToAppointment.value.filter((serviceIdInList :number) => serviceIdInList !== serviceId)
         break;
       }
       default: {
@@ -86,11 +110,18 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
     masterFreeTimeSlotsForDate,
     countServicesAddedToAppointment,
     totalPriceOfServicesToAppointment,
+    listOfServicesAddedToAppointment,
+    selectedTime,
+    description,
+    
 
     getMasterInfo,
     getFreeTimeSlotsForDate,
     changeCountServicesAndTotalPriceAddedToAppointment,
     setMasterToken,
+    setSelectedDate,
+    setSelectedTime,
+    setDescription,
 
     getMasterRaiting,
     getMasterActivities

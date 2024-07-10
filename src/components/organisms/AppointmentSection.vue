@@ -55,6 +55,7 @@ const showAppointmentModal = () => {
     <div class="mt-4 appointment-button">
       <ButtonPrimary
         @click="showAppointmentModal"
+        :disabled="!masterStore.countServicesAddedToAppointment"
         :button-text="'Записаться'"
         :classes="'btn btn-primary px-3 rounded-pill'"
       />

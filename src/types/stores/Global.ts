@@ -11,4 +11,5 @@ export interface ModalContentInfo {
 export interface templateProps {
     title: string,
     nextButtonText: string,
+    isShowFooter?: boolean,
 }

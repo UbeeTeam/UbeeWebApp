@@ -12,6 +12,7 @@ const date = ref<Date>(new Date());
 
 onMounted(async () => {
   await masterStore.getFreeTimeSlotsForDate(getFormatedDate());
+  masterStore.setSelectedDate(getFormatedDate());
 })
 
 const getFormatedDate = (): string => {
@@ -20,6 +21,7 @@ const getFormatedDate = (): string => {
 
 watch(date, async () => {
   await masterStore.getFreeTimeSlotsForDate(getFormatedDate());
+  masterStore.setSelectedDate(getFormatedDate());
 })
 </script>
 
