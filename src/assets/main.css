@@ -68,20 +68,43 @@ body {
 .footer-copyrights {
   color: var(--bs-gray-600);
   font-size: 12px;
-  line-height: 16px;
+  line-height: 16px
+}
+
+.footer-apps > a {
+  display: block
 }
 
 .footer-apps img {
   display: block;
-  height: 40px;
+  height: 40px
 }
 
-.footer-apps__apple {
+.footer-apps__appstore {
   position: relative;
+  overflow: hidden
 }
 
-.footer-apps__apple img {
-  opacity: 0.15;
+.footer-apps__appstore:before {
+  background-color: var(--ubee-status-busy);
+  color: var(--bs-white);
+  content: attr(data-soon);
+  display: block;
+  font: 900 10px/16px var(--ubee-font-header);
+  right: -60px;
+  letter-spacing: .05em;
+  padding: 0 calc(var(--ubee-gutter) * 2);
+  position: absolute;
+  text-transform: uppercase;
+  transform: rotate(-30deg);
+  bottom: 8px;
+  z-index: 2
+}
+
+.footer-apps__appstore img {
+  opacity: .15;
+  position: relative;
+  z-index: 1
 }
 
 .logo {
@@ -498,19 +521,6 @@ body {
 .appointment-modal__app figure img {
   height: 98px;
   width: 80px;
-}
-
-.appointment-modal__app .footer-apps > a {
-  display: block;
-  height: 30px;
-  margin: 0 var(--ubee-base) 0 0;
-  width: 30px;
-}
-
-.appointment-modal__app .footer-apps img {
-  display: block;
-  height: 30px;
-  width: 30px;
 }
 
 .form-datetime {

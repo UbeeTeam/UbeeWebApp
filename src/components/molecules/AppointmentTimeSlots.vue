@@ -12,6 +12,8 @@ const setSelectedTimeSlot = (time: string) => {
 watch(() => masterStore.masterFreeTimeSlotsForDate, (nextValue) => {
   if (nextValue?.timeSlots.length) {
     masterStore.setSelectedTime(nextValue.timeSlots[0] as string);
+  } else {
+    masterStore.clearSelectedTime();
   }
 }, { immediate: true });
 </script>

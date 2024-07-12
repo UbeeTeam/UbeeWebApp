@@ -8,22 +8,12 @@ const visible = computed(() => globalStore.isModalVisible);
 const modalContentInfo = computed(() => globalStore.modalContentInfo);
 
 const modalContentComponentProps = computed(() => modalContentInfo.value?.contentProps || {});
-const modalTemplateComponentProps = computed(() => modalContentInfo.value?.templateProps || {});
 </script>
 
 <template>
     <div v-if="visible" class="modal modal-overlay" @click.self="globalStore.closeModal">
-        <div class="" v-if="modalContentInfo?.template">
-            <div class="modal-content modal-dialog">
-                <component :is="modalContentInfo.template" v-bind="modalTemplateComponentProps">
-                    <component :is="modalContentInfo.content" v-bind="modalContentComponentProps"/>
-                </component>
-            </div>
-        </div>
-        <div class="" v-else>
-            <div class="modal-content">
-                <component :is="modalContentInfo" v-bind="modalContentComponentProps"/>
-            </div>
+        <div v-if="modalContentInfo" class="modal-content modal-dialog">
+            <component :is="modalContentInfo.content" v-bind="modalContentComponentProps"/>
         </div>
   </div>
 </template>

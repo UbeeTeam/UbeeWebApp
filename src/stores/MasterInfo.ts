@@ -58,9 +58,11 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const setSelectedTime = (timeSlot: string) => {
     if (selectedTime.value) {
       selectedTime.value.timeSlot = timeSlot;
-      console.log(timeSlot);
-      
     }
+  }
+
+  const clearSelectedTime = () => {
+    selectedTime.value.timeSlot = '';
   }
 
   const setDescription = (desc: string) => {
@@ -122,6 +124,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
     setSelectedDate,
     setSelectedTime,
     setDescription,
+    clearSelectedTime,
 
     getMasterRaiting,
     getMasterActivities

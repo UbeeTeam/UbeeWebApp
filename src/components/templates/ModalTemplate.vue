@@ -8,17 +8,20 @@ import ButtonPrimary from '@atoms/ButtonPrimary.vue';
 withDefaults(defineProps<Props>(), {
     isShowFooter: true,
 });
+
+const emit = defineEmits(['nextAction']);
+
 const globalStore = useGlobalStore();
 const modalStore = useModalStore();
 
 const closeModal = () => {
     globalStore.closeModal();
-    modalStore.changeCurrentSterFor(ModalAppointmentSteps.PHONE_NUMBER);
+    modalStore.changeCurrentStepFor(ModalAppointmentSteps.PHONE_NUMBER);
 }
 
 const nextAction = () => {
-    if (!modalStore.isProceedButtonEnableForAppointmentModal) {
-        modalStore.nextStepForAppointmentModal();
+    if (!modalStore.isProceedButtonDisableForAppointmentModal) {
+        emit('nextAction');
     }
 }
 </script>
@@ -36,7 +39,7 @@ const nextAction = () => {
     <div class="modal-footer" v-if="isShowFooter">
         <ButtonPrimary
             @click="nextAction"
-            :disabled="modalStore.isProceedButtonEnableForAppointmentModal"
+            :disabled="modalStore.isProceedButtonDisableForAppointmentModal"
             :button-text="nextButtonText"
             :classes="'btn btn-primary px-3 rounded-pill'"
         />

@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useModalStore } from '@/stores/ModalAppointment';
+import ModalTemplate from '@templates/ModalTemplate.vue';
+
 
 const modalStore = useModalStore();
+const emit = defineEmits(['sendSmsCode']);
 
 const model = defineModel<string>();
 
@@ -27,11 +30,12 @@ watch(() => model.value, (newValue) => {
 })
 
 const sendSmsVerifier = () => {
-    // todo
+   emit('sendSmsCode');
 }
 </script>
 
 <template>
+<ModalTemplate :next-button-text="'Подтверждение'" :title="'Подтвердить'">
     <p>Мы отправили вам SMS с кодом — введите его в поле ниже.</p>
     <div class="my-3">
         <input type="text" v-model="model" class="form-control">
@@ -40,4 +44,5 @@ const sendSmsVerifier = () => {
     <p class="appointment-agree" @click="sendSmsVerifier">
         <a href="#">Отправить SMS ещё раз</a>
     </p>
+</ModalTemplate>
 </template>

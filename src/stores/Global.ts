@@ -1,4 +1,4 @@
-import type { ModalContentInfo, templateProps } from "@/types/stores/Global";
+import type { ModalContentInfo} from "@/types/stores/Global";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
@@ -29,12 +29,6 @@ export const useGlobalStore = defineStore('globalStore', () => {
         initializing.value = false;
     }
 
-    const changeModalContentInfoTemplate = (props: templateProps) => {
-        if (modalContentInfo.value) {
-            modalContentInfo.value.templateProps = props;
-        }
-    }
-
     // Getters
 
     return {
@@ -47,6 +41,5 @@ export const useGlobalStore = defineStore('globalStore', () => {
         closeModal,
         finishInitializingLoader,
         toggleLoading,
-        changeModalContentInfoTemplate,
     }
 })
