@@ -41,6 +41,7 @@ watch(() => model.value, (newValue) => {
             <span class="input-group-text" id="basic-addon1">+7</span>
             <input v-model="model" type="text" class="form-control" aria-label="Телефон" aria-describedby="basic-addon1">
         </div>
+        <p v-if="modalStore.errorMessage" style="color: red;">{{ modalStore.errorMessage }}</p>
         <p v-if="!isNumberValid && isPhoneNumberEnter" style="color: red;">Номер не существует</p>
         <p class="appointment-agree">
             Продолжая, вы соглашаетесь c

@@ -23,7 +23,7 @@ const checkStorageAndCloseDownloadBanner = () => {
 </script>
 
 <template>
-    <div class="main-template">
+    <div class="main-template container">
         <DownloadBanner 
             v-if="showDownloadBanner" 
             @close-download-banner="showDownloadBanner = false"

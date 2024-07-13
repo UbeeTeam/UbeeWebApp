@@ -11,7 +11,7 @@ const modalContentComponentProps = computed(() => modalContentInfo.value?.conten
 </script>
 
 <template>
-    <div v-if="visible" class="modal modal-overlay" @click.self="globalStore.closeModal">
+    <div v-show="visible" class="modal modal-overlay" @click.self="globalStore.closeModal">
         <div v-if="modalContentInfo" class="modal-content modal-dialog">
             <component :is="modalContentInfo.content" v-bind="modalContentComponentProps"/>
         </div>

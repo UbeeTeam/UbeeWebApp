@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useModalStore } from '@/stores/ModalAppointment';
 import type { Props } from '@/types/components/molecules/AppointmentSuccesModalInterface';
 import ModalTemplate from '@templates/ModalTemplate.vue';
 
+const modalStore = useModalStore();
 
 defineProps<Props>();
 
@@ -13,7 +15,8 @@ defineProps<Props>();
         <p><strong>На всякий случай сохраните контакты и адрес мастера:</strong></p>
         <p>{{masterAddressAndPhone.masterPhoneNumber}}</p>
         <p>{{ masterAddressAndPhone.masterAddress }}</p>
-    </div>    
+    </div>
+    <p v-if="modalStore.errorMessage" style="color: red;">{{ modalStore.errorMessage }}</p>
     <div class="d-flex justify-content-center align-items-center mt-3 appointment-modal__app">
         <figure class="d-block flex-shrink-0">
             <img src="/src/assets/images/illustration-master.png" alt="картинка мастера">

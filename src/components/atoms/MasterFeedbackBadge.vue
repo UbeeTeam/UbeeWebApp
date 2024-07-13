@@ -14,7 +14,7 @@ withDefaults(defineProps<Props>(), {
     :class="[
       isReviewsSectionBadge
         ? 'justify-content-start align-items-start'
-        : 'justify-content-center align-items-center pt-2'
+        : 'd-flex align-items-center w-100 pt-2 master-rating'
     ]"
   >
     <span class="ps-3">{{ raiting }}</span>

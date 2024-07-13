@@ -33,6 +33,8 @@ const nextAction = async () => {
                 if (res.isSuccess) {
                     modalStore.changeCurrentStepFor(ModalAppointmentSteps.CALL_CODE);
                     deviceId.value = res.deviceId;
+                } else {
+                    modalStore.setErrorMessage(res.message);
                 }
             } catch (error) {
                 console.warn(error);
@@ -47,7 +49,11 @@ const nextAction = async () => {
                         deviceId: deviceId.value,
                     });
 
-                    if (res.isUserProfileExists && res.isSuccess) {
+                    if (!res.isSuccess) {
+                        modalStore.setErrorMessage(res.message);
+                    }
+
+                    if (res.isUserProfileExists) {
                         userName.value = {
                             firstName: res.firstName,
                             lastName: res.lastName
@@ -79,6 +85,8 @@ const nextAction = async () => {
                     if (res.isSuccess) {
                         masterAddressAndPhone.value = {masterAddress: res.masterAddress, masterPhoneNumber: res.masterPhoneNumber};
                         modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS);
+                    } else {
+                        modalStore.setErrorMessage(res.message);
                     }
                 } catch (error) {
                     console.warn(error);
@@ -94,7 +102,11 @@ const nextAction = async () => {
                         deviceId: deviceId.value,
                     });
 
-                    if (res.isUserProfileExists && res.isSuccess) {
+                    if (!res.isSuccess) {
+                        modalStore.setErrorMessage(res.message);
+                    }
+
+                    if (res.isUserProfileExists) {
                         userName.value = {
                             firstName: res.firstName,
                             lastName: res.lastName
@@ -125,6 +137,11 @@ const nextAction = async () => {
                     }, {
                         Authorization: 'Bearer ' + userToken.value,
                     });
+
+                    if (!res.isSuccess) {
+                        modalStore.setErrorMessage(res.message);
+                    }
+
                     modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS);
                 } catch (error) {
                     console.warn(error);
@@ -151,6 +168,6 @@ const sendSmsCode = async() => {
     <AppointmentAgreeModal v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.CALL_CODE" v-model="verificationCode" @next-action="nextAction" @send-sms-code="sendSmsCode"/>
     <AppointmentRegisterCustomerModal v-model="userNameAndGender" v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.REGISTRATION" @next-action="nextAction"/>
     <NameConfirmationModal :userName="userName" v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.NAME_CONFIRMATION" @next-action="nextAction"/>
-    <AppointmentAgreeSmsModal v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.SMS_CODE" @next-action="nextAction" @send-sms-code="sendSmsCode"/>
+    <AppointmentAgreeSmsModal v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.SMS_CODE" v-model="verificationCode" @next-action="nextAction" @send-sms-code="sendSmsCode"/>
     <AppointmentSuccesModal :masterAddressAndPhone v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.SUCCESS" @next-action="nextAction"/>
 </template>

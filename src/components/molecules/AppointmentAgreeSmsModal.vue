@@ -40,6 +40,7 @@ const sendSmsVerifier = () => {
     <div class="my-3">
         <input type="text" v-model="model" class="form-control">
     </div>
+    <p v-if="modalStore.errorMessage" style="color: red;">{{ modalStore.errorMessage }}</p>
     <p v-if="!isVerifieCodeValid && isVerifieCodeEnter" style="color: red;">Код должен состоять из 4 цифр</p>
     <p class="appointment-agree" @click="sendSmsVerifier">
         <a href="#">Отправить SMS ещё раз</a>

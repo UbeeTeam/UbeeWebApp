@@ -665,6 +665,7 @@ body {
 }
 
 .appointment-agree {
+  cursor: pointer;
   color: var(--bs-gray-600);
   font: 400 12px/16px var(--ubee-font-text)
 }
@@ -911,13 +912,6 @@ body {
 @media (max-width: 768px) {
   .master-map {
     height: 140px;
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    padding-left: var(--ubee-base);
-    padding-right: var(--ubee-base);
   }
 }
 

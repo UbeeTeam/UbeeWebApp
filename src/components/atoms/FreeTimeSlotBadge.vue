@@ -10,10 +10,12 @@ const isTimeSlotChecked = ref<boolean>(props.isSlotChecked);
 const id = ref<string>(cuid());
 
 const toggleCheckedTimeSlot = () => {    
-    isTimeSlotChecked.value = !isTimeSlotChecked.value;
+    isTimeSlotChecked.value = !isTimeSlotChecked.value;    
 
-    if (isTimeSlotChecked) {
+    if (isTimeSlotChecked.value) {
         emit('checkTimeSlot', props.time);
+    } else {
+        emit('checkTimeSlot', '');
     }
 } // TODO сделать чтобы стейт обновлялся при выключении выбранного времени
 </script>
