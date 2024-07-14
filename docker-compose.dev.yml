@@ -6,8 +6,8 @@ services:
             - frontend
         restart: always
         build:
-            dockerfile: Dockerfile
-            context: './nginx'
+            dockerfile: Dockerfile.dev
+            context: './nginx/dev'
         ports:
             - "3050:80"
     frontend:

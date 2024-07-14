@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: '.'
+      dockerfile: docker/Dockerfile.prod
+    volumes:
+      - build_volume:/dist
+    command: ["sh", "-c", "cp -r /app/dist /dist"]
+
+  nginx:
+    container_name: nginx
+    depends_on:
+      - frontend
+    restart: always
+    build:
+      context: './nginx/prod'
+      dockerfile: Dockerfile.prod
+    ports:
+      - "3050:80"
+    volumes:
+      - build_volume:/usr/share/nginx/html
+volumes:
+  build_volume:

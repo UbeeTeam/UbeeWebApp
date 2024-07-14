@@ -1,1 +1,9 @@
-# NO yet
+FROM node:20.9.0-alpine
+WORKDIR /app
+COPY ../package.json ./
+RUN npm i
+RUN npm install -g vite
+COPY ../ .
+RUN ["npm", "run", "build-only"]
+RUN rm -rf node_modules src public
+CMD ["sh", "-c", "cp -r /app/dist /dist"]
