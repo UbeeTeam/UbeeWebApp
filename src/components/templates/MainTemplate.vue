@@ -6,6 +6,7 @@ import { useGlobalStore } from '@stores/Global';
 import DownloadBanner from '@organisms/DownloadBanner.vue';
 import UniversalModalWindow from '@organisms/UniversalModalWindow.vue';
 import { ref, onMounted } from 'vue';
+import LogoIcon from '@atoms/LogoIcon.vue'
 
 const globalStore = useGlobalStore();
 
@@ -41,6 +42,7 @@ const checkStorageAndCloseDownloadBanner = () => {
             <main v-else class="container p-0 main">
                 <slot/>
             </main>
+        <LogoIcon/>
         <TheFooter/>
     </div>
 </template>

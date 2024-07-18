@@ -12,7 +12,7 @@ const modalContentComponentProps = computed(() => modalContentInfo.value?.conten
 
 <template>
     <div v-show="visible" class="modal modal-overlay" @click.self="globalStore.closeModal">
-        <div v-if="modalContentInfo" class="modal-content modal-dialog">
+        <div v-if="modalContentInfo" class="modal-content modal-dialog appointment-modal">
             <component :is="modalContentInfo.content" v-bind="modalContentComponentProps"/>
         </div>
   </div>
@@ -21,7 +21,6 @@ const modalContentComponentProps = computed(() => modalContentInfo.value?.conten
 <style scoped>
 .modal-overlay {
     z-index: 999;
-    min-width: 560px;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,6 +35,5 @@ const modalContentComponentProps = computed(() => modalContentInfo.value?.conten
 .modal-content {
     background: white;
     border-radius: 5px;
-    min-width: 500px;
 }
 </style>

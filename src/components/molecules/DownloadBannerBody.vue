@@ -21,7 +21,7 @@ const redirectToDownloadMobileApp = () => {
         <div>
             <ButtonPrimary
                 @click="redirectToDownloadMobileApp"
-                :buttonText="`Скачать !`"
+                :buttonText="`Скачать!`"
                 :classes="'btn-primary'"
             />
         </div>

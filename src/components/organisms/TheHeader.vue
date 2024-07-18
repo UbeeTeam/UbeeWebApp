@@ -13,14 +13,11 @@ const isMaterFormPage = computed((): boolean => {
 
 <template>
   <header
-    class="container d-flex justify-content-center align-items-center rounded-bottom-4 header position-relative"
+    class="container d-flex justify-content-center align-items-center rounded-bottom-4 header position-relative mt-2 mb-4"
   >
     <RouterBackLink v-if="isMaterFormPage" to="/" class="h-24 w-24 header__back">
       <IconSvg :name="'icon-back'" />
     </RouterBackLink>
-    <figure class="d-block logo">
-      <img src="/src/assets/images/logo.png" alt="logo" class="d-block logo__image" />
-    </figure>
   </header>
 </template>
 

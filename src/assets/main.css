@@ -81,6 +81,7 @@ body {
 }
 
 .footer-apps__appstore {
+  pointer-events: none;
   position: relative;
   overflow: hidden
 }
@@ -114,8 +115,8 @@ body {
 }
 
 .logo__image {
-  height: 24px;
-  width: 20px;
+  height: 44px;
+  width: 40px;
 }
 
 .btn-primary {
@@ -808,6 +809,21 @@ body {
   width: 80px
 }
 
+.swiper-slide {
+  aspect-ratio: 1/1;
+  border-radius: 12px !important;
+  cursor: zoom-in;
+  display: block;
+  max-width: 100%;
+  overflow: hidden
+}
+
+.swiper-slide > img {
+  aspect-ratio: 1/1;
+  display: block;
+  max-width: 100%
+}
+
 .swiper-pagination {
   align-items: center !important;
   display: flex !important;
@@ -912,6 +928,17 @@ body {
 @media (max-width: 768px) {
   .master-map {
     height: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+      padding-right: var(--ubee-base)
+  }
+
+  .banner-apps > div {
+      background: var(--bs-white) url("./images/illustration-master.png") 8px 8px/72px auto no-repeat;
+      padding-left: 80px !important
   }
 }
 
