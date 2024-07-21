@@ -2,13 +2,13 @@
 import ButtonPrimary from '@atoms/ButtonPrimary.vue';
 
 const redirectToDownloadMobileApp = () => {
-    const platform = navigator.platform.toLowerCase();
+    const userAgent = navigator.userAgent;
 
-    if (platform.includes('android')) {
+    if (/android/i.test(userAgent)) {
         window.location.href = 'https://play.google.com/store/apps/details?id=ru.ubee&pli=1';
-    }
-    if (platform.includes('iphone') || platform.includes('ipad') || platform.includes('ipod')) {
-        window.location.href = 'ссылка на App Store';
+    } else if (/iPad|iPhone|iPod/.test(userAgent)) {
+        alert('Приложение ubee скоро будет в AppStore!')
+        // window.location.href = 'https://apps.apple.com/ru/app/id123456789';
     } else {
         window.location.href = 'https://www.rustore.ru/catalog/app/ru.ubee';
     }
