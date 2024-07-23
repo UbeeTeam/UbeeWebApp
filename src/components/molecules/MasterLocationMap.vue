@@ -30,6 +30,8 @@ const onMapLoad = (mapInstance: typeof MapboxMap) => {
     center: coordinates,
     zoom: zoomLevel
   })
+
+  mapInstance.addControl(new mapboxgl.FullscreenControl())
 }
 </script>
 

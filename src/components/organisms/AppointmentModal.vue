@@ -140,8 +140,10 @@ const nextAction = async () => {
 
                     if (!res.isSuccess) {
                         modalStore.setErrorMessage(res.message);
+                        return;
                     }
 
+                    masterAddressAndPhone.value = {masterAddress: res.masterAddress, masterPhoneNumber: res.masterPhoneNumber};
                     modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS);
                 } catch (error) {
                     console.warn(error);
