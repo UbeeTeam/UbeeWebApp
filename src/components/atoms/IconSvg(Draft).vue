@@ -1,3 +1,5 @@
+<!-- Проблема в том, что при билде проекта, собирается статика и путь /src/assets/index.svg#${name} уже не работает, к тому же index.svg не попадает в билд -->
+
 <script setup lang="ts">
 import type { Props } from '@/types/components/atoms/IconSvgInterface'
 import { defineProps } from 'vue'

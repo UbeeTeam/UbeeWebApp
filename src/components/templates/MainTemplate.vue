@@ -17,7 +17,7 @@ onMounted(() => {
 const showDownloadBanner = ref<boolean>(true);
 
 const checkStorageAndCloseDownloadBanner = () => {
-  if (localStorage.getItem('isUserCloseDownloadBanner')) {
+  if (sessionStorage.getItem('isUserCloseDownloadBanner')) {
     showDownloadBanner.value = false;
   }
 }
