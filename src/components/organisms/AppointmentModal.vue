@@ -53,8 +53,9 @@ const nextAction = async () => {
     }
     case ModalAppointmentSteps.CALL_CODE: {
       try {
+        const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
         const res = await codeVerifier({
-          phoneNumber: '+7' + phoneNumber.value,
+          phoneNumber: cleanPhoneNumber,
           verificationCode: verificationCode.value,
           deviceId: deviceId.value
         })
@@ -111,8 +112,9 @@ const nextAction = async () => {
     }
     case ModalAppointmentSteps.SMS_CODE: {
       try {
+        const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
         const res = await codeVerifier({
-          phoneNumber: '+7' + phoneNumber.value,
+          phoneNumber: cleanPhoneNumber,
           verificationCode: verificationCode.value,
           deviceId: deviceId.value
         })
@@ -175,7 +177,8 @@ const nextAction = async () => {
 }
 const sendSmsCode = async () => {
   try {
-    const res = await smsAuthenticator('+7' + phoneNumber.value)
+    const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
+    const res = await smsAuthenticator(cleanPhoneNumber)
     if (res.isSuccess) {
       deviceId.value = res.deviceId
     }
