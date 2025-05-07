@@ -35,11 +35,11 @@ const userNameAndGender = ref<{ firstName: string; lastName: string; gender: num
 const userName = ref<{ firstName: string; lastName: string }>({ firstName: '', lastName: '' })
 
 const nextAction = async () => {
+  const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
   switch (modalStore.currentStepForAppointmentModal) {
     case ModalAppointmentSteps.PHONE_NUMBER: {
       try {
-        const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
-        const res = await callAuthenticator(cleanPhoneNumber)
+        const res = await callAuthenticator(`+${cleanPhoneNumber}`)
         if (res.isSuccess) {
           modalStore.changeCurrentStepFor(ModalAppointmentSteps.CALL_CODE)
           deviceId.value = res.deviceId
@@ -53,9 +53,8 @@ const nextAction = async () => {
     }
     case ModalAppointmentSteps.CALL_CODE: {
       try {
-        const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
         const res = await codeVerifier({
-          phoneNumber: cleanPhoneNumber,
+          phoneNumber: `+${cleanPhoneNumber}`,
           verificationCode: verificationCode.value,
           deviceId: deviceId.value
         })
@@ -112,9 +111,8 @@ const nextAction = async () => {
     }
     case ModalAppointmentSteps.SMS_CODE: {
       try {
-        const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
         const res = await codeVerifier({
-          phoneNumber: cleanPhoneNumber,
+          phoneNumber: `+${cleanPhoneNumber}`,
           verificationCode: verificationCode.value,
           deviceId: deviceId.value
         })
@@ -178,7 +176,7 @@ const nextAction = async () => {
 const sendSmsCode = async () => {
   try {
     const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
-    const res = await smsAuthenticator(cleanPhoneNumber)
+    const res = await smsAuthenticator(`+${cleanPhoneNumber}`)
     if (res.isSuccess) {
       deviceId.value = res.deviceId
     }
