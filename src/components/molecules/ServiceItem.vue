@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { Props } from '@/types/components/molecules/ServiceItemInterface';
-import ServiceOption from '@atoms/ServiceOption.vue';
+import type { Props } from '@/types/components/molecules/ServiceItemInterface'
+import ServiceOption from '@atoms/ServiceOption.vue'
+import { wordEndingYears } from '@/utils/helpers'
 
 defineProps<Props>()
 </script>
@@ -17,16 +18,16 @@ defineProps<Props>()
         :aria-controls="`#service${masterActivity.id}`"
       >
         <strong>{{ masterActivity.activityTemplateName }}</strong>
-        <span class="mt-1">Опыт работы&nbsp;— {{ masterActivity.experience }}</span>
+        <span class="mt-1"
+          >Опыт работы&nbsp;— {{ masterActivity.experience }}
+          {{ wordEndingYears(masterActivity.experience, 'год', 'года', 'лет') }}
+        </span>
       </button>
     </h2>
     <div :id="`service${masterActivity.id}`" class="accordion-collapse collapse">
       <div class="accordion-body service-content">
         <ul class="m-0 p-0 service-items">
-          <ServiceOption
-            v-for="service in masterServices"
-            :service="service"
-          />
+          <ServiceOption v-for="service in masterServices" :service="service" />
         </ul>
       </div>
     </div>
