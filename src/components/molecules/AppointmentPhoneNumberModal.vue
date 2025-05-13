@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useModalStore } from '@/stores/ModalAppointment'
 import ModalTemplate from '@templates/ModalTemplate.vue'
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, nextTick } from 'vue'
 
 const modalStore = useModalStore()
 const emit = defineEmits(['nextAction'])
@@ -10,9 +10,54 @@ const phoneNumber = defineModel<string>()
 const isPhoneNumberEnter = ref(false)
 const isNumberValid = ref(false)
 
+const vueTel = ref(null)
+const currentDialCode = ref('')
+
+onMounted(() => {
+  nextTick(() => {
+    const input = vueTel.value?.$el?.querySelector('input')
+    if (input) {
+      input.addEventListener('keydown', (e: KeyboardEvent) => {
+        const target = e.target as HTMLInputElement
+        const dialCodeLength = currentDialCode.value.length
+
+        if (
+          ['Backspace', 'Delete'].includes(e.key) &&
+          target.selectionStart !== null &&
+          target.selectionStart <= dialCodeLength
+        ) {
+          e.preventDefault()
+        }
+
+        if (
+          e.key.length === 1 &&
+          target.selectionStart !== null &&
+          target.selectionStart < dialCodeLength
+        ) {
+          e.preventDefault()
+        }
+      })
+    }
+  })
+})
+
+watch(
+  () => vueTel.value?.activeCountry,
+  (country) => {
+    if (country?.dialCode) {
+      currentDialCode.value = `+${country.dialCode}`
+    }
+  }
+)
+
 watch(phoneNumber, (newValue) => {
   if (newValue) {
     isPhoneNumberEnter.value = true
+
+    if (!newValue.startsWith(currentDialCode.value) && newValue !== '+') {
+      phoneNumber.value = `${currentDialCode.value}${newValue.replace(/^\+?\d*/, '')}`
+    }
+
     isNumberValid.value = true
     modalStore.setValueIsProceedButtonEnableForAppointmentModal(false)
   } else {
@@ -32,6 +77,7 @@ watch(phoneNumber, (newValue) => {
     <p>Введите номер телефона, мы пришлем код подтверждения.</p>
     <div class="input-group my-3">
       <vue-tel-input
+        ref="vueTel"
         v-model="phoneNumber"
         :only-countries="['ru', 'kz', 'by']"
         default-country="ru"
@@ -41,6 +87,9 @@ watch(phoneNumber, (newValue) => {
           placeholder: 'Введите номер телефона',
           inputmode: 'numeric'
         }"
+        mode="international"
+        validCharactersOnly="true"
+        autoDefaultCountry: false
       />
     </div>
 
