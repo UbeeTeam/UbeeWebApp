@@ -2,6 +2,7 @@
 import { useMasterInfoStore } from '@/stores/MasterInfo'
 import { ServiceActions } from '@/types/components/actions/services/serviceActions'
 import type { Props } from '@/types/components/atoms/ServiceOptionInterface'
+import { formatMinutes } from '@/utils/helpers'
 import { inject, ref } from 'vue'
 
 const props = withDefaults(defineProps<Props>(), {
@@ -12,20 +13,24 @@ const masterStore = useMasterInfoStore()
 
 const isInputChecked = ref(false)
 
-const toggleServiceAdd = () => {
+const toggleServiceAdd = async () => {
   if (!isInputChecked.value) {
     masterStore.changeCountServicesAndTotalPriceAddedToAppointment({
       action: ServiceActions.ADD,
       price: props.service.cost,
-      serviceId: props.service.id
+      serviceId: props.service.id,
+      duration: props.service.duration
     })
   } else {
     masterStore.changeCountServicesAndTotalPriceAddedToAppointment({
       action: ServiceActions.DELETE,
       price: props.service.cost,
-      serviceId: props.service.id
+      serviceId: props.service.id,
+      duration: props.service.duration
     })
   }
+
+  await masterStore.getFreeTimeSlotsForDate(masterStore.selectedTime.date)
 }
 
 const currencySign = inject('currencySign')
@@ -44,7 +49,7 @@ const currencySign = inject('currencySign')
     </label>
     <strong class="flex-shrink-0 service-item__title">
       {{ service.serviceName }}
-      <span class="mt-1"> {{ service.duration }} минут </span>
+      <span class="mt-1"> {{ formatMinutes(service.duration) }} </span>
     </strong>
     <strong class="flex-shrink-0 service-item__price">{{ service.cost }} {{ currencySign }}</strong>
   </li>
