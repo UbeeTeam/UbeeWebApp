@@ -34,3 +34,31 @@ export const wordEndingYears = (number: number, one: string, two: string, five: 
   }
   return five
 }
+
+export function formatMinutes(minutes: number): string {
+  if (minutes <= 0) return '0 минут'
+
+  const hours = Math.floor(minutes / 60)
+  const mins = minutes % 60
+
+  const hoursStr = hours > 0 ? `${hours} ${getHourWord(hours)}` : ''
+  const minsStr = mins > 0 ? `${mins} минут` : ''
+
+  return [hoursStr, minsStr].filter(Boolean).join(' ')
+}
+
+// вспомогательная функция для склонения слова "час"
+function getHourWord(hours: number): string {
+  const rem = hours % 100
+  if (rem >= 11 && rem <= 14) return 'часов'
+  switch (hours % 10) {
+    case 1:
+      return 'час'
+    case 2:
+    case 3:
+    case 4:
+      return 'часа'
+    default:
+      return 'часов'
+  }
+}

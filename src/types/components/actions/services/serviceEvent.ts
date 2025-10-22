@@ -1,7 +1,8 @@
-import type { ServiceAction } from './serviceActions';
+import type { ServiceAction } from './serviceActions'
 
 export interface ServiceEvent {
-  action: ServiceAction;
-  price: number;
-  serviceId: number;
+  action: ServiceAction
+  price: number
+  serviceId: number
+  duration: number
 }
