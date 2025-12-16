@@ -314,7 +314,8 @@ body {
 }
 
 .service-item {
-  overflow: hidden;
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
@@ -350,6 +351,11 @@ body {
   font-size: 14px;
   line-height: 16px;
   transition: all 0.2s linear;
+}
+
+.service-item__price {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .service-item__price {

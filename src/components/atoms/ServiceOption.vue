@@ -47,10 +47,10 @@ const currencySign = inject('currencySign')
       />
       <span></span>
     </label>
-    <strong class="flex-shrink-0 service-item__title">
+    <strong class="service-item__title">
       {{ service.serviceName }}
       <span class="mt-1"> {{ formatMinutes(service.duration) }} </span>
     </strong>
-    <strong class="flex-shrink-0 service-item__price">{{ service.cost }} {{ currencySign }}</strong>
+    <strong class="service-item__price">{{ service.cost }} {{ currencySign }}</strong>
   </li>
 </template>
