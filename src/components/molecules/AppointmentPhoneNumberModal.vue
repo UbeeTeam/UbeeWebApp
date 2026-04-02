@@ -88,7 +88,6 @@ watch(phoneNumber, (newValue) => {
           inputmode: 'numeric'
         }"
         mode="international"
-        validCharactersOnly="true"
         autoDefaultCountry: false
       />
     </div>
@@ -98,9 +97,9 @@ watch(phoneNumber, (newValue) => {
 
     <p class="appointment-agree">
       Продолжая, вы соглашаетесь с
-      <a href="https://docs.google.com/document/d/...">Политикой конфиденциальности</a>
+      <a href="https://docs.google.com/document/d/e/2PACX-1vRW6sfPotEMFRKquemZlFNoLUmrIeseBHHsSB0_KGBfSRR4mCeSBjqtX5A8beXT8mP6bsfDWdlcwK4l/pub">Политикой конфиденциальности</a>
       и
-      <a href="https://docs.google.com/document/d/...">Пользовательским соглашением</a>
+      <a href="https://docs.google.com/document/d/e/2PACX-1vSEP1vjQ0OBGWBrqHHZKaGIENR2BcE06Xp4jpPHtaBJcu-G30zHNqfDZf2L21yJD-khdbMWTU-DZ8DN/pub">Пользовательским соглашением</a>
     </p>
   </ModalTemplate>
 </template>
