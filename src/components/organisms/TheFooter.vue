@@ -19,6 +19,6 @@
         <img src="/src/assets/svg/appstore.svg" alt="Скачать Ubee в RuStore" />
       </a>
     </div>
-    <div class="mt-4 footer-copyrights">© 2024 Ubee</div>
+    <div class="mt-4 footer-copyrights">© 2026 Ubee</div>
   </footer>
 </template>

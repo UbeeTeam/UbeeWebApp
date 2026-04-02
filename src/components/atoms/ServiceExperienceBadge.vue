@@ -26,6 +26,6 @@ function formatExperienceYears(years: number) {
 <template>
   <div class="d-flex flex-nowrap rounded-pill master-skill">
     <span>{{ activity.activityTemplateName }}</span>
-    <span class="rounded-pill">{{ formatExperienceYears(activity.experience) }}</span>
+    <span class="rounded-pill">Опыт {{ formatExperienceYears(activity.experience) }}</span>
   </div>
 </template>
