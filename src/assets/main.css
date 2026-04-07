@@ -47,6 +47,10 @@
     'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+* {
+  font-family: 'ClearSans', sans-serif !important;
+}
+
 #app {
   width: 100vw;
 }
@@ -265,12 +269,18 @@ body {
 
 .block-header {
   font-size: 18px;
+  font-weight: 600;
   line-height: 20px;
+}
+
+.review-author {
+  font-weight: 600;
 }
 
 .block-subheader {
   font-size: 16px;
   line-height: 20px;
+  font-weight: 600;
 }
 
 .service {
@@ -860,13 +870,13 @@ body {
 
 .dp__cell_inner {
   border-radius: 50% !important;
-  color: var(--ubee-secondary-600) !important;
+  color: var(--ubee-success) !important;
   transition: all 0.2s linear !important;
 }
 
 .dp__today {
-  background-color: var(--ubee-secondary-050) !important;
-  border: none !important;
+  background-color: var(--bs-white) !important;
+  border: 1px solid #dbd8d7 !important;
 }
 
 .dp__active_date {
@@ -874,8 +884,35 @@ body {
   color: var(--bs-white) !important;
 }
 
+.dp__cell_disabled {
+  color: var(--bs-gray-600) !important;
+}
+
 .dp--past {
-  color: var(--bs-gray-500) !important;
+  color: #dbd8d7 !important;
+}
+
+/* ACTIVE + TODAY (самый приоритетный кейс) */
+.dp__today.dp__active_date {
+  color: var(--bs-white) !important;
+  font-weight: 600;
+}
+
+/* ACTIVE + NOT TODAY */
+.dp__active_date:not(.dp__today) {
+  color: var(--bs-white) !important;
+  font-weight: 600;
+}
+
+/* TODAY + NOT ACTIVE */
+.dp__today:not(.dp__active_date):not(.dp__cell_disabled) {
+  color: var(--ubee-secondary-600) !important;
+  font-weight: 600;
+}
+
+/* TODAY + DISABLED (если вдруг disabled приходит отдельно) */
+.dp__today.dp__cell_disabled:not(.dp__active_date) {
+  color: var(--bs-gray-600) !important;
 }
 
 .dp--past.dp__active_date {

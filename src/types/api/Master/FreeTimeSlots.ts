@@ -1,3 +1,4 @@
 export interface FreeTimeSlots {
-    timeSlots: string[],
+  timeSlots: string[]
+  days?: string[]
 }
