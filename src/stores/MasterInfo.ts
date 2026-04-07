@@ -6,6 +6,7 @@ import { useGlobalStore } from '@/stores/Global'
 import type { Master, FreeTimeSlots } from '@/types/api/Master'
 import type { ServiceEvent } from '@/types/components/actions/services/serviceEvent'
 import { ServiceActions } from '@/types/components/actions/services/serviceActions'
+import { getFormatedDate } from '@/utils/helpers/dateHelper'
 
 export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const globalStore = useGlobalStore()
@@ -13,6 +14,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const masterData = ref<Master>()
   const masterToken = ref<string | null>(localStorage.getItem('masterToken'))
   const masterFreeTimeSlotsForDate = ref<FreeTimeSlots>()
+  const daysWithFreeTimeSlots = ref<FreeTimeSlots>()
 
   const selectedTime = ref<{ date: string; timeSlot: string }>({ date: '', timeSlot: '' })
   const description = ref<string>('')
@@ -22,7 +24,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
   const listOfServicesAddedToAppointment = ref<Array<number>>([])
   const totalDurationOfServicesToAppointment = ref<number>(0)
 
-  //Actions
+  // Actions
 
   const getMasterInfo = async (token: string) => {
     try {
@@ -46,6 +48,27 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
       masterFreeTimeSlotsForDate.value = res.data
     } catch (error) {
       console.error('Error fetching free time slots', error)
+    } finally {
+      globalStore.toggleLoading()
+    }
+  }
+
+  const getDaysWithFreeTimeSlots = async () => {
+    try {
+      globalStore.toggleLoading()
+      const today = new Date()
+      const endDate = new Date(today)
+      endDate.setMonth(today.getMonth() + 3)
+
+      const requestDateStringFormatStart = getFormatedDate(today)
+      const requestDateStringFormatEnd = getFormatedDate(endDate)
+
+      const res = await axios.get(
+        `${API_URL_MASTER}/GetDaysWithFreeTimeSlots/${masterToken.value}/${requestDateStringFormatStart}/${requestDateStringFormatEnd}/${totalDurationOfServicesToAppointment.value}`
+      )
+      daysWithFreeTimeSlots.value = res.data
+    } catch (error) {
+      console.error('Error fetching days with free time slots', error)
     } finally {
       globalStore.toggleLoading()
     }
@@ -114,7 +137,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
     masterToken.value = token
   }
 
-  //Getters
+  // Getters
 
   const getMasterRaiting = computed<{ rating: number; feedBackCount: number }>(() => {
     return {
@@ -131,6 +154,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
     masterData,
     masterToken,
     masterFreeTimeSlotsForDate,
+    daysWithFreeTimeSlots,
     countServicesAddedToAppointment,
     totalPriceOfServicesToAppointment,
     listOfServicesAddedToAppointment,
@@ -140,6 +164,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
 
     getMasterInfo,
     getFreeTimeSlotsForDate,
+    getDaysWithFreeTimeSlots,
     changeCountServicesAndTotalPriceAddedToAppointment,
     setMasterToken,
     setSelectedDate,
