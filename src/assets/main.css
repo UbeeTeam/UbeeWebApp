@@ -905,7 +905,7 @@ body {
 
 /* TODAY + NOT ACTIVE */
 .dp__today:not(.dp__active_date):not(.dp__cell_disabled) {
-  color: var(--ubee-secondary-600) !important;
+  color: var(--ubee-success) !important;
 }
 
 /* TODAY + DISABLED (если вдруг disabled приходит отдельно) */
