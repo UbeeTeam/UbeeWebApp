@@ -58,7 +58,7 @@ export const useMasterInfoStore = defineStore('masterInfoStore', () => {
       globalStore.toggleLoading()
       const today = new Date()
       const endDate = new Date(today)
-      endDate.setMonth(today.getMonth() + 3)
+      endDate.setMonth(today.getMonth() + 6)
 
       const requestDateStringFormatStart = getFormatedDate(today)
       const requestDateStringFormatEnd = getFormatedDate(endDate)

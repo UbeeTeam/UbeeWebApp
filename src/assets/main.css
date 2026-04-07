@@ -872,6 +872,7 @@ body {
   border-radius: 50% !important;
   color: var(--ubee-success) !important;
   transition: all 0.2s linear !important;
+  padding-top: 9px !important;
 }
 
 .dp__today {
@@ -895,19 +896,16 @@ body {
 /* ACTIVE + TODAY (самый приоритетный кейс) */
 .dp__today.dp__active_date {
   color: var(--bs-white) !important;
-  font-weight: 600;
 }
 
 /* ACTIVE + NOT TODAY */
 .dp__active_date:not(.dp__today) {
   color: var(--bs-white) !important;
-  font-weight: 600;
 }
 
 /* TODAY + NOT ACTIVE */
 .dp__today:not(.dp__active_date):not(.dp__cell_disabled) {
   color: var(--ubee-secondary-600) !important;
-  font-weight: 600;
 }
 
 /* TODAY + DISABLED (если вдруг disabled приходит отдельно) */
