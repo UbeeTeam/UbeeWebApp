@@ -11,7 +11,7 @@ import {
   smsAuthenticator
 } from '@/api/customer/customerAppointment'
 import AppointmentRegisterCustomerModal from '@molecules/AppointmentRegisterCustomerModal.vue'
-import NameConfirmationModal from '@molecules/NameConfirmationModal.vue'
+// import NameConfirmationModal from '@molecules/NameConfirmationModal.vue'
 import { useMasterInfoStore } from '@/stores/MasterInfo'
 import AppointmentAgreeSmsModal from '@molecules/AppointmentAgreeSmsModal.vue'
 import AppointmentSuccesModal from '@molecules/AppointmentSuccesModal.vue'
@@ -33,6 +33,36 @@ const userNameAndGender = ref<{ firstName: string; lastName: string; gender: num
   gender: 0
 })
 const userName = ref<{ firstName: string; lastName: string }>({ firstName: '', lastName: '' })
+
+const createAppointmentForExitsUser = async () => {
+  try {
+    const resCreateAppointment = await createAppointment(
+      {
+        masterId: masterStore.masterData?.id,
+        timeSlot: masterStore.selectedTime?.timeSlot,
+        started: masterStore.selectedTime?.date,
+        isAllergic: false,
+        description: masterStore.description,
+        masterServiceIds: masterStore.listOfServicesAddedToAppointment
+      },
+      {
+        Authorization: 'Bearer ' + userToken.value
+      }
+    )
+
+    if (resCreateAppointment.isSuccess) {
+      masterAddressAndPhone.value = {
+        masterAddress: resCreateAppointment.masterAddress,
+        masterPhoneNumber: resCreateAppointment.masterPhoneNumber
+      }
+      modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS)
+    } else {
+      modalStore.setErrorMessage(resCreateAppointment.message)
+    }
+  } catch (error) {
+    console.warn(error)
+  }
+}
 
 const nextAction = async () => {
   const cleanPhoneNumber = phoneNumber.value.replace(/\D/g, '')
@@ -68,7 +98,9 @@ const nextAction = async () => {
             firstName: res.firstName,
             lastName: res.lastName
           }
-          modalStore.changeCurrentStepFor(ModalAppointmentSteps.NAME_CONFIRMATION)
+          // modalStore.changeCurrentStepFor(ModalAppointmentSteps.NAME_CONFIRMATION)
+
+          await createAppointmentForExitsUser()
         } else if (!res.isUserProfileExists && res.isSuccess) {
           modalStore.changeCurrentStepFor(ModalAppointmentSteps.REGISTRATION)
         }
@@ -79,36 +111,36 @@ const nextAction = async () => {
       }
       break
     }
-    case ModalAppointmentSteps.NAME_CONFIRMATION: {
-      try {
-        const res = await createAppointment(
-          {
-            masterId: masterStore.masterData?.id,
-            timeSlot: masterStore.selectedTime?.timeSlot,
-            started: masterStore.selectedTime?.date,
-            isAllergic: false,
-            description: masterStore.description,
-            masterServiceIds: masterStore.listOfServicesAddedToAppointment
-          },
-          {
-            Authorization: 'Bearer ' + userToken.value
-          }
-        )
+    // case ModalAppointmentSteps.NAME_CONFIRMATION: {
+    //   try {
+    //     const res = await createAppointment(
+    //       {
+    //         masterId: masterStore.masterData?.id,
+    //         timeSlot: masterStore.selectedTime?.timeSlot,
+    //         started: masterStore.selectedTime?.date,
+    //         isAllergic: false,
+    //         description: masterStore.description,
+    //         masterServiceIds: masterStore.listOfServicesAddedToAppointment
+    //       },
+    //       {
+    //         Authorization: 'Bearer ' + userToken.value
+    //       }
+    //     )
 
-        if (res.isSuccess) {
-          masterAddressAndPhone.value = {
-            masterAddress: res.masterAddress,
-            masterPhoneNumber: res.masterPhoneNumber
-          }
-          modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS)
-        } else {
-          modalStore.setErrorMessage(res.message)
-        }
-      } catch (error) {
-        console.warn(error)
-      }
-      break
-    }
+    //     if (res.isSuccess) {
+    //       masterAddressAndPhone.value = {
+    //         masterAddress: res.masterAddress,
+    //         masterPhoneNumber: res.masterPhoneNumber
+    //       }
+    //       modalStore.changeCurrentStepFor(ModalAppointmentSteps.SUCCESS)
+    //     } else {
+    //       modalStore.setErrorMessage(res.message)
+    //     }
+    //   } catch (error) {
+    //     console.warn(error)
+    //   }
+    //   break
+    // }
     case ModalAppointmentSteps.SMS_CODE: {
       try {
         const res = await codeVerifier({
@@ -126,7 +158,8 @@ const nextAction = async () => {
             firstName: res.firstName,
             lastName: res.lastName
           }
-          modalStore.changeCurrentStepFor(ModalAppointmentSteps.NAME_CONFIRMATION)
+          // modalStore.changeCurrentStepFor(ModalAppointmentSteps.NAME_CONFIRMATION)
+          await createAppointmentForExitsUser()
         } else if (!res.isUserProfileExists && res.isSuccess) {
           modalStore.changeCurrentStepFor(ModalAppointmentSteps.REGISTRATION)
         }
@@ -203,11 +236,11 @@ const sendSmsCode = async () => {
     v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.REGISTRATION"
     @next-action="nextAction"
   />
-  <NameConfirmationModal
+  <!-- <NameConfirmationModal
     :userName="userName"
     v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.NAME_CONFIRMATION"
     @next-action="nextAction"
-  />
+  /> -->
   <AppointmentAgreeSmsModal
     v-if="modalStore.currentStepForAppointmentModal === ModalAppointmentSteps.SMS_CODE"
     v-model="verificationCode"
