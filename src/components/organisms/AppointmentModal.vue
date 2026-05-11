@@ -89,6 +89,10 @@ const nextAction = async () => {
           deviceId: deviceId.value
         })
 
+        if (res.accessToken && res.accessToken.token) {
+          userToken.value = res.accessToken.token
+        }
+
         if (!res.isSuccess) {
           modalStore.setErrorMessage(res.message)
         }
@@ -105,7 +109,7 @@ const nextAction = async () => {
           modalStore.changeCurrentStepFor(ModalAppointmentSteps.REGISTRATION)
         }
 
-        userToken.value = res.accessToken.token
+        // userToken.value = res.accessToken.token
       } catch (error) {
         console.warn(error)
       }
@@ -153,6 +157,10 @@ const nextAction = async () => {
           modalStore.setErrorMessage(res.message)
         }
 
+        if (res.accessToken && res.accessToken.token) {
+          userToken.value = res.accessToken.token
+        }
+
         if (res.isUserProfileExists) {
           userName.value = {
             firstName: res.firstName,
@@ -164,7 +172,7 @@ const nextAction = async () => {
           modalStore.changeCurrentStepFor(ModalAppointmentSteps.REGISTRATION)
         }
 
-        userToken.value = res.accessToken.token
+        // userToken.value = res.accessToken.token
       } catch (error) {
         console.warn(error)
       }
